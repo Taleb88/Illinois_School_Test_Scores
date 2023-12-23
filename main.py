@@ -98,3 +98,44 @@ def incident_amounts_provided(df):
 incident_amounts_df = incident_amounts_provided(discipline_condensed_df)
 
 incident_amounts_df.to_excel('incident_amounts_provided.xlsx', index=False)
+
+# SAT Math Average Score (High Schools only and eventually calculate its averages of each county)
+sat_condensed_df = pd.DataFrame()
+rcdts = sat_df.iloc[:,0]
+sat_condensed_df['RCDTS'] = rcdts.copy()
+school_name = sat_df.iloc[:,2]
+sat_condensed_df['School Name'] = school_name.copy() # school name
+city = sat_df.iloc[:,4]
+sat_condensed_df['City'] = city.copy()
+county = sat_df.iloc[:,5]
+sat_condensed_df['County'] = county.copy()
+school_type = sat_df.iloc[:,8]
+sat_condensed_df['School Type'] = school_type.copy() # school type
+sat_reading_average_score = sat_df.iloc[:,10]
+sat_condensed_df['SAT Reading Average Score'] = sat_reading_average_score.copy()
+sat_math_average_score = sat_df.iloc[:,11]
+sat_condensed_df['SAT Math Average Score'] = sat_math_average_score.copy()
+
+sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+
+# filter data to only high schools
+sat_condensed_df = sat_condensed_df.loc[(sat_condensed_df['School Type'] == 'HIGH SCHOOL')]
+
+# delete empty rows
+def empty_grade_value(df): # removes rows that have at least 1 average score null
+    return df[df['SAT Reading Average Score'].notna() | df['SAT Math Average Score'].notna()]
+
+sat_condensed_df = empty_grade_value(sat_condensed_df)
+
+sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+
+# create new columns -> Total Score, Average Score (Total Score / 1600), and Percentage
+sat_condensed_df['Total SAT Score'] = sat_condensed_df['SAT Reading Average Score'] + \
+                                            sat_condensed_df['SAT Math Average Score']
+sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['Total SAT Score'] / 1600
+sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'].astype(str) + "%"
+
+sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+# sat_condensed_df.to_csv('sat_condensed.csv', index=False)
+
+# pivot table to be created to display amount of schools per county
