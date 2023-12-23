@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Illinois_State_Test_Scores.iml" filepath="$PROJECT_DIR$/.idea/Illinois_State_Test_Scores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Whip Media/Python Related Projects/.idea/Python Related Projects.iml" filepath="$PROJECT_DIR$/../../Whip Media/Python Related Projects/.idea/Python Related Projects.iml" />
+    </modules>
+  </component>
+</project>
