@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from warnings import simplefilter # suppresses warning, allows > 100 columns to be created in new dataframe
 simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
 
@@ -25,6 +26,7 @@ school_name = discipline_df.iloc[:,2]
 discipline_condensed_df['School Name'] = school_name.copy() # school name
 city = discipline_df.iloc[:,4]
 discipline_condensed_df['City'] = city.copy() # city
+
 school_type = discipline_df.iloc[:,8]
 discipline_condensed_df['School Type'] = school_type.copy() # school type
 number_of_discipline_incidents = discipline_df.iloc[:,11]
@@ -143,11 +145,31 @@ sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 sat_condensed_df['Total SAT Score'] = sat_condensed_df['SAT Reading Average Score'] + \
                                             sat_condensed_df['SAT Math Average Score']
 sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['Total SAT Score'] / 1600
-sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'].astype(str).str[2:4] + '%'
-#sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'].str[2:4]
-#sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'] + '%'
+sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage']\
+                                               .astype(str)\
+                                               .str[2:4]\
+                                               + '%'
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
-sat_condensed_df.to_csv('sat_condensed.csv', index=False)
+#sat_condensed_df.to_csv('sat_condensed.csv', index=False)
 
-# pivot table to be created to display amount of schools per county
+def highlight_max(data, color='yellow'):
+    '''
+    highlight the maximum in a Series or DataFrame
+    '''
+    attr = 'background-color: {}'.format(color)
+    if data.ndim == 1:  # Series from .apply(axis=0) or axis=1
+        is_max = data == data.max()
+        return [attr if v else '' for v in is_max]
+    else:  # from .apply(axis=None)
+        is_max = data == data.max().max()
+        return pd.DataFrame(np.where(is_max, attr, ''),
+                            index=data.index, columns=data.columns)
+
+sat_condensed_df = sat_condensed_df.style.apply(highlight_max, subset=['Total SAT Score'])
+
+sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+
+# function to be created that converts rcdts values into strings
+
+# pivot table to be created to display amount of schools per county who took SATs
