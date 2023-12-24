@@ -33,7 +33,11 @@ discipline_condensed_df['# of Discipline Incidents'] = \
 
 # delete empty rows
 def delete_row(df): # find all the non-missing values ONLY
-    return df[df['School Name'].notna()]
+    try:
+        return df[df['School Name'].notna()]
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot delete rows with missing school names')
 
 # delete rows with empty cell under School Name
 finance_condensed_df = delete_row(discipline_condensed_df)
@@ -93,6 +97,8 @@ discipline_finance_condensed_df.to_excel('discipline_finance_condensed.xlsx', in
 def incident_amounts_provided(df):
     # conversion of non-numeric values to NaN and then filtering rows based on those values
     numeric_mask = pd.to_numeric(df['# of Discipline Incidents'], errors='coerce').notna()
+    if numeric_mask is None:
+        raise ValueError
     return df[numeric_mask]
 
 incident_amounts_df = incident_amounts_provided(discipline_condensed_df)
@@ -123,7 +129,11 @@ sat_condensed_df = sat_condensed_df.loc[(sat_condensed_df['School Type'] == 'HIG
 
 # delete empty rows
 def empty_grade_value(df): # removes rows that have at least 1 average score null
-    return df[df['SAT Reading Average Score'].notna() | df['SAT Math Average Score'].notna()]
+    try:
+        return df[df['SAT Reading Average Score'].notna() | df['SAT Math Average Score'].notna()]
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot delete rows with missing SAT Reading Average Score or SAT Math Average Score values')
 
 sat_condensed_df = empty_grade_value(sat_condensed_df)
 
@@ -133,9 +143,11 @@ sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 sat_condensed_df['Total SAT Score'] = sat_condensed_df['SAT Reading Average Score'] + \
                                             sat_condensed_df['SAT Math Average Score']
 sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['Total SAT Score'] / 1600
-sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'].astype(str) + "%"
+sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'].astype(str).str[2:4] + '%'
+#sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'].str[2:4]
+#sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentage'] + '%'
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
-# sat_condensed_df.to_csv('sat_condensed.csv', index=False)
+sat_condensed_df.to_csv('sat_condensed.csv', index=False)
 
 # pivot table to be created to display amount of schools per county
