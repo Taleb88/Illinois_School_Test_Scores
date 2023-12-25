@@ -171,6 +171,18 @@ sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentag
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 #sat_condensed_df.to_csv('sat_condensed.csv', index=False)
 
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '9%', 'SAT Score Percentage'] = '90%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '8%', 'SAT Score Percentage'] = '80%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '7%', 'SAT Score Percentage'] = '70%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '6%', 'SAT Score Percentage'] = '60%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '5%', 'SAT Score Percentage'] = '50%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '4%', 'SAT Score Percentage'] = '40%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '3%', 'SAT Score Percentage'] = '30%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '2%', 'SAT Score Percentage'] = '20%'
+sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '1%', 'SAT Score Percentage'] = '10%'
+
+sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+
 # highlight the highest Total SAT Score value
 def highlight_max(data, color='yellow'):
     '''
@@ -192,3 +204,6 @@ sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 # function to be created that converts rcdts values into strings
 
 # pivot table to be created to display amount of schools per county who took SATs
+'''
+table = pd.pivot_table(sat_condensed_df, values=[''])
+'''
