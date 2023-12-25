@@ -96,16 +96,34 @@ discipline_finance_condensed_df = discipline_finance_condensed_df.sort_values(
 
 discipline_finance_condensed_df.to_excel('discipline_finance_condensed.xlsx', index=False)
 
-def incident_amounts_provided(df):
+def incident_numbers_provided(df):
     # conversion of non-numeric values to NaN and then filtering rows based on those values
     numeric_mask = pd.to_numeric(df['# of Discipline Incidents'], errors='coerce').notna()
     if numeric_mask is None:
         raise ValueError
     return df[numeric_mask]
 
-incident_amounts_df = incident_amounts_provided(discipline_condensed_df)
+incident_numbers_df = incident_numbers_provided(discipline_condensed_df)
 
-incident_amounts_df.to_excel('incident_amounts_provided.xlsx', index=False)
+incident_numbers_df.to_excel('incident_numbers_reported.xlsx', index=False)
+
+# highlight the lowest number of incidents
+def highlight_min(data, color='#1dd7f3'):
+    '''
+    highlight the maximum in a Series or DataFrame
+    '''
+    attr = 'background-color: {}'.format(color)
+    if data.ndim == 1:  # Series from .apply(axis=0) or axis=1
+        is_min = data == data.min()
+        return [attr if v else '' for v in is_min]
+    else:  # from .apply(axis=None)
+        is_min = data == data.min().min()
+        return pd.DataFrame(np.where(is_min, attr, ''),
+                            index=data.index, columns=data.columns)
+
+incident_numbers_df = incident_numbers_df.style.apply(highlight_min, subset=['# of Discipline Incidents'])
+
+incident_numbers_df.to_excel('incident_numbers_provided.xlsx', index=False)
 
 # SAT Math Average Score (High Schools only and eventually calculate its averages of each county)
 sat_condensed_df = pd.DataFrame()
@@ -153,6 +171,7 @@ sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentag
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 #sat_condensed_df.to_csv('sat_condensed.csv', index=False)
 
+# highlight the highest Total SAT Score value
 def highlight_max(data, color='yellow'):
     '''
     highlight the maximum in a Series or DataFrame
