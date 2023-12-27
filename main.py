@@ -96,16 +96,22 @@ discipline_finance_condensed_df = discipline_finance_condensed_df.sort_values(
 
 discipline_finance_condensed_df.to_excel('discipline_finance_condensed.xlsx', index=False)
 
-def incident_numbers_provided(df):
+def incident_numbers_reported(df):
     # conversion of non-numeric values to NaN and then filtering rows based on those values
     numeric_mask = pd.to_numeric(df['# of Discipline Incidents'], errors='coerce').notna()
     if numeric_mask is None:
         raise ValueError
     return df[numeric_mask]
 
-incident_numbers_df = incident_numbers_provided(discipline_condensed_df)
+incident_numbers_df = incident_numbers_reported(discipline_condensed_df)
 
 incident_numbers_df.to_excel('incident_numbers_reported.xlsx', index=False)
+
+# total student incident numbers of each city
+'''
+total_incident_num_per_city_df = incident_numbers_df.groupby(['City']).sum()
+total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city.xlsx', index=False)
+'''
 
 # highlight the lowest number of incidents
 def highlight_min(data, color='#1dd7f3'):
@@ -123,7 +129,7 @@ def highlight_min(data, color='#1dd7f3'):
 
 incident_numbers_df = incident_numbers_df.style.apply(highlight_min, subset=['# of Discipline Incidents'])
 
-incident_numbers_df.to_excel('incident_numbers_provided.xlsx', index=False)
+incident_numbers_df.to_excel('incident_numbers_reported.xlsx', index=False)
 
 # SAT Math Average Score (High Schools only and eventually calculate its averages of each county)
 sat_condensed_df = pd.DataFrame()
@@ -184,7 +190,7 @@ sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '1%', 'SAT Scor
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 
 # highlight the highest Total SAT Score value
-def highlight_max(data, color='yellow'):
+def highlight_max(data, color='green'):
     '''
     highlight the maximum in a Series or DataFrame
     '''
@@ -200,10 +206,3 @@ def highlight_max(data, color='yellow'):
 sat_condensed_df = sat_condensed_df.style.apply(highlight_max, subset=['Total SAT Score'])
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
-
-# function to be created that converts rcdts values into strings
-
-# pivot table to be created to display amount of schools per county who took SATs
-'''
-table = pd.pivot_table(sat_condensed_df, values=[''])
-'''
