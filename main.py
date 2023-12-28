@@ -107,11 +107,22 @@ incident_numbers_df = incident_numbers_reported(discipline_condensed_df)
 
 incident_numbers_df.to_excel('incident_numbers_reported.xlsx', index=False)
 
-# total student incident numbers of each city
-'''
-total_incident_num_per_city_df = incident_numbers_df.groupby(['City']).sum()
-total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city.xlsx', index=False)
-'''
+# pivot table - total student incident numbers of each city
+total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
+                                                values='# of Discipline Incidents',
+                                                columns='City',
+                                                aggfunc='sum'
+                                                )
+total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city_pivot_table.xlsx', index=False)
+
+# pivot table - total student incident numbers per school type
+total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
+                                                values='# of Discipline Incidents',
+                                                columns='School Type',
+                                                aggfunc='sum'
+                                                )
+total_incident_num_per_city_df.to_excel('sum_of_incidents_per_school_type_pivot_table.xlsx', index=False)
+
 
 # highlight the lowest number of incidents
 def highlight_min(data, color='#1dd7f3'):
