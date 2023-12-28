@@ -270,7 +270,7 @@ def grab_gender_data(df): # find all the non-missing values ONLY
         return df[df['School Name'].notna() &
                   df['# ISA Proficiency Total Student'].notna() &
                   df['# ISA Proficiency - Male'].notna() &
-                  df['# ISA Proficiency - Female'].notna() &
+                  df['# ISA Proficiency - Female'].notna()]
     except Exception as e:
         print(f'caught {type(e)}: e \n '
               f'Cannot delete rows with missing school names')
