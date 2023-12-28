@@ -264,14 +264,13 @@ isa_condensed_df['# ISA Proficiency - Children with Disabilities'] = \
 
 isa_condensed_df.to_excel('isa_condensed.xlsx', index=False)
 
-# if school name AND proficiency values are blank for each column, REMOVE row
+# if school name AND proficiency values for total student, male, and female are blank for each column, REMOVE row
 def grab_gender_data(df): # find all the non-missing values ONLY
     try:
         return df[df['School Name'].notna() &
                   df['# ISA Proficiency Total Student'].notna() &
                   df['# ISA Proficiency - Male'].notna() &
                   df['# ISA Proficiency - Female'].notna() &
-                  df['# ISA Proficiency - White'].notna()]
     except Exception as e:
         print(f'caught {type(e)}: e \n '
               f'Cannot delete rows with missing school names')
