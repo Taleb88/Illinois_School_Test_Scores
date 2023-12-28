@@ -235,7 +235,7 @@ isa_condensed_df['District Size'] = district_size.copy()
 school_type = isa_df.iloc[:,8]
 isa_condensed_df['School Type'] = school_type.copy()
 isa_proficiency_total_student = isa_df.iloc[:,10]
-isa_condensed_df['#ISA Proficiency Total Student'] = isa_proficiency_total_student.copy()
+isa_condensed_df['# ISA Proficiency Total Student'] = isa_proficiency_total_student.copy()
 isa_proficiency_male = isa_df.iloc[:,11]
 isa_condensed_df['# ISA Proficiency - Male'] = isa_proficiency_male.copy()
 isa_proficiency_female = isa_df.iloc[:,12]
@@ -264,18 +264,20 @@ isa_condensed_df['# ISA Proficiency - Children with Disabilities'] = \
 
 isa_condensed_df.to_excel('isa_condensed.xlsx', index=False)
 
-# delete rows with empty cell under School Name
-isa_condensed_df = delete_row(isa_condensed_df)
-
-isa_condensed_df.to_excel('isa_condensed.xlsx', index=False)
-
-'''
-# if proficiency values are blank for each column, remove row
-def delete_additional_rows(df): # find all the non-missing values ONLY
+# if school name AND proficiency values are blank for each column, REMOVE row
+def grab_gender_data(df): # find all the non-missing values ONLY
     try:
-        return df[df['#ISA Proficiency Total Student'].notna() &
-                  df['# ISA Proficiency - Male'].notna()]
+        return df[df['School Name'].notna() &
+                  df['# ISA Proficiency Total Student'].notna() &
+                  df['# ISA Proficiency - Male'].notna() &
+                  df['# ISA Proficiency - Female'].notna() &
+                  df['# ISA Proficiency - White'].notna()]
     except Exception as e:
         print(f'caught {type(e)}: e \n '
               f'Cannot delete rows with missing school names')
-'''
+
+# delete rows with empty cell under EVERY proficiency column
+isa_condensed_df = grab_gender_data(isa_condensed_df)
+
+# create updated version of isa condensed gender (male/female) data
+isa_condensed_df.to_excel('isa_condensed_gender_data.xlsx', index=False)
