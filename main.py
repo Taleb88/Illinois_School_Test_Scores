@@ -98,7 +98,8 @@ discipline_finance_condensed_df.to_excel('discipline_finance_condensed.xlsx', in
 
 def incident_numbers_reported(df):
     # conversion of non-numeric values to NaN and then filtering rows based on those values
-    numeric_mask = pd.to_numeric(df['# of Discipline Incidents'], errors='coerce').notna()
+    numeric_mask = pd.to_numeric(df['# of Discipline Incidents'],
+                                 errors='coerce').notna()
     if numeric_mask is None:
         raise ValueError
     return df[numeric_mask]
@@ -113,7 +114,8 @@ total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
                                                 columns='City',
                                                 aggfunc='sum'
                                                 )
-total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city_pivot_table.xlsx', index=False)
+total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city_pivot_table.xlsx',
+                                        index=False)
 
 # pivot table - total student incident numbers per school type
 total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
@@ -217,3 +219,63 @@ def highlight_max(data, color='green'):
 sat_condensed_df = sat_condensed_df.style.apply(highlight_max, subset=['Total SAT Score'])
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+
+# isa proficiency
+isa_condensed_df = pd.DataFrame()
+rcdts = isa_df.iloc[:,0]
+isa_condensed_df['RCDTS'] = rcdts.copy()
+school_name = isa_df.iloc[:,2]
+isa_condensed_df['School Name'] = school_name.copy() # school name
+city = isa_df.iloc[:,4]
+isa_condensed_df['City'] = city.copy()
+county = isa_df.iloc[:,5]
+isa_condensed_df['County'] = county.copy()
+district_size = isa_df.iloc[:,7]
+isa_condensed_df['District Size'] = district_size.copy()
+school_type = isa_df.iloc[:,8]
+isa_condensed_df['School Type'] = school_type.copy()
+isa_proficiency_total_student = isa_df.iloc[:,10]
+isa_condensed_df['#ISA Proficiency Total Student'] = isa_proficiency_total_student.copy()
+isa_proficiency_male = isa_df.iloc[:,11]
+isa_condensed_df['# ISA Proficiency - Male'] = isa_proficiency_male.copy()
+isa_proficiency_female = isa_df.iloc[:,12]
+isa_condensed_df['# ISA Proficiency - Female'] = isa_proficiency_female.copy()
+isa_proficiency_white = isa_df.iloc[:,13]
+isa_condensed_df['# ISA Proficiency - White'] = isa_proficiency_white.copy()
+isa_proficiency_black_or_african_american = isa_df.iloc[:,14]
+isa_condensed_df['# ISA Proficiency - Black or African American'] = \
+    isa_proficiency_black_or_african_american.copy()
+isa_proficiency_hispanic_or_latino = isa_df.iloc[:,15]
+isa_condensed_df['# ISA Proficiency - Hispanic or Latino'] = \
+    isa_proficiency_hispanic_or_latino.copy()
+isa_proficiency_asian = isa_df.iloc[:,16]
+isa_condensed_df['# ISA Proficiency - Asian'] = isa_proficiency_asian.copy()
+isa_proficiency_native_hawaiian_or_other_pacific_islander = isa_df.iloc[:,17]
+isa_condensed_df['# ISA Proficiency - Native Hawaiian or Other Pacific Islander'] = \
+    isa_proficiency_native_hawaiian_or_other_pacific_islander.copy()
+isa_proficiency_american_indian_or_alaska_native = isa_df.iloc[:,18]
+isa_condensed_df['# ISA Proficiency - American Indian or Alaska Native'] = \
+    isa_proficiency_american_indian_or_alaska_native.copy()
+isa_proficiency_two_or_more_races = isa_df.iloc[:,19]
+isa_condensed_df['# ISA Proficiency - Two or More Races'] = isa_proficiency_two_or_more_races.copy()
+isa_proficiency_children_with_disabilities = isa_df.iloc[:,20]
+isa_condensed_df['# ISA Proficiency - Children with Disabilities'] = \
+    isa_proficiency_children_with_disabilities.copy()
+
+isa_condensed_df.to_excel('isa_condensed.xlsx', index=False)
+
+# delete rows with empty cell under School Name
+isa_condensed_df = delete_row(isa_condensed_df)
+
+isa_condensed_df.to_excel('isa_condensed.xlsx', index=False)
+
+'''
+# if proficiency values are blank for each column, remove row
+def delete_additional_rows(df): # find all the non-missing values ONLY
+    try:
+        return df[df['#ISA Proficiency Total Student'].notna() &
+                  df['# ISA Proficiency - Male'].notna()]
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot delete rows with missing school names')
+'''
