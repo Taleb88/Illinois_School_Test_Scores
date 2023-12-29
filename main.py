@@ -399,38 +399,38 @@ isa_condensed_isa_children_with_disabilities_data_df = \
 isa_condensed_isa_children_with_disabilities_data_df.to_excel\
     ('isa_condensed_children_with_disabilities_data.xlsx', index=False)
 
-# white male students pivot table
-isa_condensed_white_male_students_table = pd.pivot_table(
+# white students pivot table
+isa_condensed_white_students_table = pd.pivot_table(
     isa_condensed_white_students_data_df,
     index='City',
     columns='County',
     values='# ISA Proficiency - White',
-    aggfunc='sum' #cook and alsip
+    aggfunc='sum'
 )
 
+# white students pivot table
+isa_condensed_white_students_table.to_excel('isa_condensed_white_student_num_pivot_table.xlsx')
 
-isa_condensed_white_male_students_table.to_excel('isa_condensed_white_male_student_num_pivot_table.xlsx')
-
-# black male students pivot table
-isa_condensed_black_male_students_table = pd.pivot_table(
-    isa_condensed_white_students_data_df,
+# black students pivot table
+isa_condensed_black_students_table = pd.pivot_table(
+    isa_condensed_black_students_data_df,
     index='City',
     columns='County',
     values='# ISA Proficiency - Black or African American',
     aggfunc='sum'
 )
 
-# black male students pivot table
-isa_condensed_black_male_students_table.to_excel('isa_condensed_black_male_student_num_pivot_table.xlsx')
+# black students pivot table
+isa_condensed_black_students_table.to_excel('isa_condensed_black_student_num_pivot_table.xlsx')
 
-# hispanic male students pivot table
-isa_condensed_hispanic_male_students_table = pd.pivot_table(
-    isa_condensed_white_students_data_df,
+# hispanic students pivot table
+isa_condensed_hispanic_students_table = pd.pivot_table(
+    isa_condensed_hispanic_students_data_df,
     index='City',
     columns='County',
-    values='# ISA Proficiency - Black or African American',
+    values='# ISA Proficiency - Hispanic or Latino',
     aggfunc='sum'
 )
 
-# hispanic male students pivot table
-isa_condensed_hispanic_male_students_table.to_excel('isa_condensed_hispanic_male_student_num_pivot_table.xlsx')
+# hispanic students pivot table
+isa_condensed_hispanic_students_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
