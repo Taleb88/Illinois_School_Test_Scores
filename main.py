@@ -472,3 +472,29 @@ isa_condensed_american_indian_or_alaska_native_students_table = pd.pivot_table(
 # american indian or alaska native students pivot table
 isa_condensed_american_indian_or_alaska_native_students_table\
     .to_excel('isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx')
+
+# multiracial students pivot table
+isa_condensed_multiracial_students_table = pd.pivot_table(
+    isa_condensed_isa_multiracial_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Two or More Races',
+    aggfunc='sum'
+)
+
+# multiracial students pivot table
+isa_condensed_multiracial_students_table\
+    .to_excel('isa_condensed_multiracial_student_num_pivot_table.xlsx')
+
+# children with disabilities pivot table
+isa_condensed_children_with_disabilities_table = pd.pivot_table(
+    isa_condensed_isa_children_with_disabilities_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Children with Disabilities',
+    aggfunc='sum'
+)
+
+# children with disabilities pivot table
+isa_condensed_children_with_disabilities_table\
+    .to_excel('isa_condensed_children_with_disabilities_num_pivot_table.xlsx')
