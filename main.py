@@ -295,7 +295,7 @@ def grab_isa_white_black_race_data(df): # find all the non-missing values ONLY
 # delete rows with empty cell under proficiency columns in grab_isa_race_data()
 isa_condensed_df_v3 = grab_isa_white_black_race_data(isa_condensed_df_v2)
 
-# create updated version of isa condensed gender (male/female) data
+# create updated version of isa condensed white and black students data
 isa_condensed_df_v3.to_excel('isa_condensed_white_and_black_race_data.xlsx', index=False)
 
 # if the # isa proficiency values for students is blank, remove row
@@ -305,10 +305,14 @@ def grab_isa_hispanic_asian_race_data(df): # find all the non-missing values ONL
                   df['# ISA Proficiency - Asian'].notna()]
     except Exception as e:
         print(f'caught {type(e)}: e \n '
-              f'Cannot delete rows with missing data within grab_isa_race_data()')
+              f'Cannot delete rows with missing data within grab_isa_hispanic_asian_race_data()')
 
 # delete rows with empty cell under proficiency columns in grab_isa_race_data()
 isa_condensed_df_v4 = grab_isa_hispanic_asian_race_data(isa_condensed_df_v2)
 
-# create updated version of isa condensed gender (male/female) data
+# create updated version of isa condensed hispanic and asian students data
 isa_condensed_df_v4.to_excel('isa_condensed_hispanic_and_asian_race_data.xlsx', index=False)
+
+# multiracial students data
+
+# students with disabilities data
