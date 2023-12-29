@@ -339,7 +339,7 @@ isa_condensed_asian_students_data_df = grab_isa_asian_students_data(isa_condense
 # create updated version of isa condensed asian students data
 isa_condensed_asian_students_data_df.to_excel('isa_condensed_asian_students_data.xlsx', index=False)
 
-# if the # isa proficiency values of hispanic students is blank, remove row
+# if the # isa proficiency values of hawaiian and other pacific islander students is blank, remove row
 def grab_isa_pacific_islander_students_data(df): # find all the non-missing values ONLY
     try:
         return df[df['# ISA Proficiency - Native Hawaiian or Other Pacific Islander'].notna()]
@@ -351,6 +351,8 @@ def grab_isa_pacific_islander_students_data(df): # find all the non-missing valu
 isa_condensed_pacific_islander_students_data_df = \
     grab_isa_pacific_islander_students_data(isa_condensed_gender_df)
 
-# create updated version of isa condensed hispanic students data
+# create updated version of isa condensed hawaiian and other pacific islander students data
 isa_condensed_pacific_islander_students_data_df.to_excel\
     ('isa_condensed_pacific_islander_students_data.xlsx', index=False)
+
+
