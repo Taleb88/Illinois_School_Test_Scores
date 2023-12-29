@@ -114,8 +114,7 @@ total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
                                                 columns='City',
                                                 aggfunc='sum'
                                                 )
-total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city_pivot_table.xlsx',
-                                        index=False)
+total_incident_num_per_city_df.to_excel('sum_of_incidents_per_city_pivot_table.xlsx')
 
 # pivot table - total student incident numbers per school type
 total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
@@ -123,8 +122,7 @@ total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
                                                 columns='School Type',
                                                 aggfunc='sum'
                                                 )
-total_incident_num_per_city_df.to_excel('sum_of_incidents_per_school_type_pivot_table.xlsx', index=False)
-
+total_incident_num_per_city_df.to_excel('sum_of_incidents_per_school_type_pivot_table.xlsx')
 
 # highlight the lowest number of incidents
 def highlight_min(data, color='#1dd7f3'):
@@ -278,8 +276,6 @@ def grab_isa_gender_data(df): # find all the non-missing values ONLY
 # delete rows with empty cell under proficiency columns in grab_isa_gender_data()
 isa_condensed_gender_df = grab_isa_gender_data(isa_condensed_df)
 
-# isa_condensed_df_v2.drop(isa_condensed_df.columns[[10,11,12,13,14,15,16]], axis=1, inplace=True)
-
 # create updated version of isa condensed gender (male/female) data
 isa_condensed_gender_df.to_excel('isa_condensed_gender_data.xlsx', index=False)
 
@@ -402,3 +398,35 @@ isa_condensed_isa_children_with_disabilities_data_df = \
 # create updated version of isa condensed children with disabilities students data
 isa_condensed_isa_children_with_disabilities_data_df.to_excel\
     ('isa_condensed_children_with_disabilities_data.xlsx', index=False)
+
+# white male students pivot table
+isa_condensed_white_male_students_table = pd.pivot_table(
+    isa_condensed_white_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - White'
+)
+
+isa_condensed_white_male_students_table.to_excel('isa_condensed_white_male_student_num_pivot_table.xlsx')
+
+# black male students pivot table
+isa_condensed_black_male_students_table = pd.pivot_table(
+    isa_condensed_white_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Black or African American'
+)
+
+# black male students pivot table
+isa_condensed_black_male_students_table.to_excel('isa_condensed_black_male_student_num_pivot_table.xlsx')
+
+# hispanic male students pivot table
+isa_condensed_hispanic_male_students_table = pd.pivot_table(
+    isa_condensed_white_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Black or African American'
+)
+
+# hispanic male students pivot table
+isa_condensed_hispanic_male_students_table.to_excel('isa_condensed_hispanic_male_student_num_pivot_table.xlsx')
