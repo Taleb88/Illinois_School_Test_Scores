@@ -404,8 +404,10 @@ isa_condensed_white_male_students_table = pd.pivot_table(
     isa_condensed_white_students_data_df,
     index='City',
     columns='County',
-    values='# ISA Proficiency - White'
+    values='# ISA Proficiency - White',
+    aggfunc='sum' #cook and alsip
 )
+
 
 isa_condensed_white_male_students_table.to_excel('isa_condensed_white_male_student_num_pivot_table.xlsx')
 
@@ -414,7 +416,8 @@ isa_condensed_black_male_students_table = pd.pivot_table(
     isa_condensed_white_students_data_df,
     index='City',
     columns='County',
-    values='# ISA Proficiency - Black or African American'
+    values='# ISA Proficiency - Black or African American',
+    aggfunc='sum'
 )
 
 # black male students pivot table
@@ -425,7 +428,8 @@ isa_condensed_hispanic_male_students_table = pd.pivot_table(
     isa_condensed_white_students_data_df,
     index='City',
     columns='County',
-    values='# ISA Proficiency - Black or African American'
+    values='# ISA Proficiency - Black or African American',
+    aggfunc='sum'
 )
 
 # hispanic male students pivot table
