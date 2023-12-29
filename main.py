@@ -434,3 +434,41 @@ isa_condensed_hispanic_students_table = pd.pivot_table(
 
 # hispanic students pivot table
 isa_condensed_hispanic_students_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
+
+# asian students pivot table
+isa_condensed_asian_students_table = pd.pivot_table(
+    isa_condensed_asian_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Asian',
+    aggfunc='sum'
+)
+
+# asian students pivot table
+isa_condensed_asian_students_table.to_excel('isa_condensed_asian_student_num_pivot_table.xlsx')
+
+# pacific islander students pivot table
+isa_condensed_pacific_islander_students_table = pd.pivot_table(
+    isa_condensed_pacific_islander_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Native Hawaiian or Other Pacific Islander',
+    aggfunc='sum'
+)
+
+# pacific islander students pivot table
+isa_condensed_pacific_islander_students_table.\
+    to_excel('isa_condensed_pacific_islander_student_num_pivot_table.xlsx')
+
+# american indian or alaska native students pivot table
+isa_condensed_american_indian_or_alaska_native_students_table = pd.pivot_table(
+    isa_condensed_american_indian_or_alaskan_native_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - American Indian or Alaska Native',
+    aggfunc='sum'
+)
+
+# american indian or alaska native students pivot table
+isa_condensed_american_indian_or_alaska_native_students_table\
+    .to_excel('isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx')
