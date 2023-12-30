@@ -499,4 +499,17 @@ isa_condensed_children_with_disabilities_table = pd.pivot_table(
 isa_condensed_children_with_disabilities_table\
     .to_excel('isa_condensed_children_with_disabilities_num_pivot_table.xlsx')
 
-# concat isa white and black student pivot tables
+# concat isa white and black student pivot tables via keys
+isa_pivot_table_white_and_black_student_frames = \
+    [
+        isa_condensed_white_students_table,
+        isa_condensed_black_students_table
+    ]
+
+isa_pivot_table_white_and_black_student_concat = pd.concat(
+    isa_pivot_table_white_and_black_student_frames,
+    keys=['White Students','Black Students']
+)
+
+isa_pivot_table_white_and_black_student_concat.\
+    to_excel('pivot_table_white_and_black_student_concat.xlsx')
