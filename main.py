@@ -399,7 +399,7 @@ isa_condensed_isa_children_with_disabilities_data_df = \
 isa_condensed_isa_children_with_disabilities_data_df.to_excel\
     ('isa_condensed_children_with_disabilities_data.xlsx', index=False)
 
-# white students pivot table
+# isa white students pivot table
 isa_condensed_white_students_table = pd.pivot_table(
     isa_condensed_white_students_data_df,
     index='City',
@@ -408,10 +408,10 @@ isa_condensed_white_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# white students pivot table
+# isa white students pivot table
 isa_condensed_white_students_table.to_excel('isa_condensed_white_student_num_pivot_table.xlsx')
 
-# black students pivot table
+# isa black students pivot table
 isa_condensed_black_students_table = pd.pivot_table(
     isa_condensed_black_students_data_df,
     index='City',
@@ -420,10 +420,10 @@ isa_condensed_black_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# black students pivot table
+# isa black students pivot table
 isa_condensed_black_students_table.to_excel('isa_condensed_black_student_num_pivot_table.xlsx')
 
-# hispanic students pivot table
+# isa hispanic students pivot table
 isa_condensed_hispanic_students_table = pd.pivot_table(
     isa_condensed_hispanic_students_data_df,
     index='City',
@@ -432,10 +432,10 @@ isa_condensed_hispanic_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# hispanic students pivot table
+# isa hispanic students pivot table
 isa_condensed_hispanic_students_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
 
-# asian students pivot table
+# isa asian students pivot table
 isa_condensed_asian_students_table = pd.pivot_table(
     isa_condensed_asian_students_data_df,
     index='City',
@@ -444,10 +444,10 @@ isa_condensed_asian_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# asian students pivot table
+# isa asian students pivot table
 isa_condensed_asian_students_table.to_excel('isa_condensed_asian_student_num_pivot_table.xlsx')
 
-# pacific islander students pivot table
+# isa pacific islander students pivot table
 isa_condensed_pacific_islander_students_table = pd.pivot_table(
     isa_condensed_pacific_islander_students_data_df,
     index='City',
@@ -456,11 +456,11 @@ isa_condensed_pacific_islander_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# pacific islander students pivot table
+# isa pacific islander students pivot table
 isa_condensed_pacific_islander_students_table.\
     to_excel('isa_condensed_pacific_islander_student_num_pivot_table.xlsx')
 
-# american indian or alaska native students pivot table
+# isa american indian or alaska native students pivot table
 isa_condensed_american_indian_or_alaska_native_students_table = pd.pivot_table(
     isa_condensed_american_indian_or_alaskan_native_students_data_df,
     index='City',
@@ -469,11 +469,11 @@ isa_condensed_american_indian_or_alaska_native_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# american indian or alaska native students pivot table
+# isa american indian or alaska native students pivot table
 isa_condensed_american_indian_or_alaska_native_students_table\
     .to_excel('isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx')
 
-# multiracial students pivot table
+# isa multiracial students pivot table
 isa_condensed_multiracial_students_table = pd.pivot_table(
     isa_condensed_isa_multiracial_students_data_df,
     index='City',
@@ -482,11 +482,11 @@ isa_condensed_multiracial_students_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-# multiracial students pivot table
+# isa multiracial students pivot table
 isa_condensed_multiracial_students_table\
     .to_excel('isa_condensed_multiracial_student_num_pivot_table.xlsx')
 
-# children with disabilities pivot table
+# isa children with disabilities pivot table
 isa_condensed_children_with_disabilities_table = pd.pivot_table(
     isa_condensed_isa_children_with_disabilities_data_df,
     index='City',
@@ -498,3 +498,5 @@ isa_condensed_children_with_disabilities_table = pd.pivot_table(
 # children with disabilities pivot table
 isa_condensed_children_with_disabilities_table\
     .to_excel('isa_condensed_children_with_disabilities_num_pivot_table.xlsx')
+
+# concat isa white and black student pivot tables
