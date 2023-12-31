@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from warnings import simplefilter # suppresses warning, allows > 100 columns to be created in new dataframe
 simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
 
@@ -515,6 +516,50 @@ isa_pivot_table_white_and_black_student_concat.\
     to_excel('pivot_table_white_and_black_student_concat.xlsx')
 
 # concat all isa students (race only) pivot tables via keys
-isa_pivot_table_all_races_frames = [
+isa_pivot_table_all_races_frames = \
+    [
+        isa_condensed_white_students_table,
+        isa_condensed_black_students_table,
+        isa_condensed_hispanic_students_table,
+        isa_condensed_asian_students_table,
+        isa_condensed_pacific_islander_students_table,
+        isa_condensed_american_indian_or_alaska_native_students_table,
+        isa_condensed_multiracial_students_table,
+    ]
 
-]
+isa_pivot_table_all_races_concat = pd.concat(
+    isa_pivot_table_all_races_frames,
+    keys=[
+        'White Students',
+        'Black Students',
+        'Hispanic or Latino Students',
+        'Asian Students',
+        'Native Hawaiian or Other Pacific Islander Students',
+        'American Indian or Alaska Native Students',
+        'Two or More Races Students'
+        ]
+)
+
+isa_pivot_table_all_races_concat.to_excel('isa_pivot_table_all_races_concat.xlsx')
+
+# creating a bar chart of isa proficiency pertaining to white students per school
+file = pd.read_excel('isa_condensed_white_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - White']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("White Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
+
+# creating a bar chart of isa proficiency pertaining to black students per school
+file = pd.read_excel('isa_condensed_black_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - Black or African American']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("Black or African American Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
