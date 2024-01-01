@@ -6,33 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4ef430f-ed1d-4632-8a46-ebab3c05751c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discipline_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/discipline_condensed.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discipline_finance_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/discipline_finance_condensed.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finance_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/finance_condensed.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/incident_numbers_reported.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/incident_numbers_reported.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_alaskan_or_american_indian_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_alaskan_or_american_indian_students_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_asian_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_asian_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_asian_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_asian_students_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_black_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_black_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_black_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_black_students_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_children_with_disabilities_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_children_with_disabilities_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_children_with_disabilities_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_children_with_disabilities_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_gender_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_gender_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_hispanic_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_hispanic_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_hispanic_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_hispanic_students_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_multiracial_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_multiracial_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_multiracial_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_multiracial_students_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_pacific_islander_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_pacific_islander_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_pacific_islander_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_pacific_islander_students_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_white_student_num_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_white_student_num_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isa_condensed_white_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_white_students_data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pivot_table_white_and_black_student_concat.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/pivot_table_white_and_black_student_concat.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sat_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sat_condensed.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sum_of_incidents_per_city_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sum_of_incidents_per_city_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sum_of_incidents_per_school_type_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sum_of_incidents_per_school_type_pivot_table.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

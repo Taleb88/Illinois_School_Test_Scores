@@ -563,3 +563,69 @@ plt.bar(x_axis, y_axis, width=5)
 plt.xlabel("Black or African American Students Per School")
 plt.ylabel("# ISA Proficiency Total Student")
 plt.show()
+
+# creating a bar chart of isa proficiency pertaining to hispanic students per school
+file = pd.read_excel('isa_condensed_hispanic_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - Hispanic or Latino']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("Hispanic or Latino Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
+
+# creating a bar chart of isa proficiency pertaining to asian students per school
+file = pd.read_excel('isa_condensed_asian_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - Asian']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("Asian Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
+
+# creating a bar chart of isa proficiency pertaining to pacific islander students per school
+file = pd.read_excel('isa_condensed_pacific_islander_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - Native Hawaiian or Other Pacific Islander']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("Native Hawaiian or Other Pacific Islander Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
+
+# creating a bar chart of isa proficiency pertaining to alaskan or american indian students per school
+file = pd.read_excel('isa_condensed_alaskan_or_american_indian_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - American Indian or Alaska Native']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("American Indian or Alaska Native Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
+
+# creating a bar chart of isa proficiency pertaining to multiracial students per school
+file = pd.read_excel('isa_condensed_multiracial_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - Two or More Races']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("Multiracial Students Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
+
+# creating a bar chart of isa proficiency pertaining to students with disabilities per school
+file = pd.read_excel('isa_condensed_multiracial_students_data.xlsx')
+
+x_axis = file['# ISA Proficiency - Children with Disabilities']
+y_axis = file['# ISA Proficiency Total Student']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("Students w/Disabilities Per School")
+plt.ylabel("# ISA Proficiency Total Student")
+plt.show()
