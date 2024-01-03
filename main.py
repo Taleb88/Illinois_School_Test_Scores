@@ -187,6 +187,7 @@ sat_condensed_df['SAT Score Percentage'] = sat_condensed_df['SAT Score Percentag
                                                .astype(str)\
                                                .str[2:4]\
                                                + '%'
+sat_condensed_df['SAT Grade Status'] = [''] * len(sat_condensed_df)
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 #sat_condensed_df.to_csv('sat_condensed.csv', index=False)
@@ -203,9 +204,10 @@ sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '1%', 'SAT Scor
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 
-# create new column in sat_condensed.xlsx titled 'grade status' -> Low, Mediocre, Decent, Good, Excellent
+# values in 'SAT Grade Status' -> Low, Mediocre, Decent, Good, Excellent
 '''
-    
+status = []    
+    for x in sat_condensed_df['Status']
 '''
 
 # highlight the highest Total SAT Score value
@@ -242,7 +244,7 @@ sat_condensed_avg_score_per_county_pivot_table = pd.pivot_table(
 )
 
 sat_condensed_avg_score_per_county_pivot_table.to_excel('sat_condensed_avg_score_per_county_pivot_table.xlsx')
-
+'''
 # creating a pie chart of total SAT scores per county
 fig = px.bar(sat_condensed_df, x='County', y='Total SAT Score', title='Total SAT Score Per County')
 # set the border and background color of the chart area
@@ -268,7 +270,7 @@ fig.update_layout(
 fig.show()
 # Alternatively you can save the bar graph to an image using below line of code
 pio.write_image(fig, 'bar_graph.png')
-
+'''
 # isa proficiency
 isa_condensed_df = pd.DataFrame()
 rcdts = isa_df.iloc[:,0]
