@@ -205,10 +205,22 @@ sat_condensed_df.loc[sat_condensed_df['SAT Score Percentage'] == '1%', 'SAT Scor
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 
 # values in 'SAT Grade Status' -> Low, Mediocre, Decent, Good, Excellent
-'''
-status = []    
-    for x in sat_condensed_df['Status']
-'''
+status = []
+for grade in sat_condensed_df['Total SAT Score']:
+    if grade >= 1400:
+        status.append('Excellent')
+    elif grade >= 1000 and grade < 1400:
+        status.append('Proficient')
+    elif grade >= 800 and grade < 1000:
+        status.append('Decent')
+    elif grade >= 600 and grade < 800:
+        status.append('Mediocre')
+    else:
+        status.append('Low')
+
+sat_condensed_df['SAT Grade Status'] = status
+
+sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 
 # highlight the highest Total SAT Score value
 def highlight_max(data, color='green'):
