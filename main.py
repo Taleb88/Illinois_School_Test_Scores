@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.io as pio
 from warnings import simplefilter # suppresses warning, allows > 100 columns to be created in new dataframe
 simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
 
@@ -215,9 +217,52 @@ def highlight_max(data, color='green'):
         return pd.DataFrame(np.where(is_max, attr, ''),
                             index=data.index, columns=data.columns)
 
-sat_condensed_df = sat_condensed_df.style.apply(highlight_max, subset=['Total SAT Score'])
+sat_condensed_highlight_max_total_sat_score_value_df = sat_condensed_df.style.apply(
+    highlight_max,
+    subset=['Total SAT Score']
+)
 
-sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
+sat_condensed_highlight_max_total_sat_score_value_df.to_excel(
+    'sat_condensed_highlighted_top_total_score.xlsx',
+    index=False
+)
+
+# create pivot table with SAT score average per county
+sat_condensed_avg_score_per_county_pivot_table = pd.pivot_table(
+    sat_condensed_df,
+    index='City',
+    columns='County',
+    values='Total SAT Score',
+    aggfunc='mean'
+)
+
+sat_condensed_avg_score_per_county_pivot_table.to_excel('sat_condensed_avg_score_per_county_pivot_table.xlsx')
+
+# creating a pie chart of total SAT scores per county
+fig = px.bar(sat_condensed_df, x='County', y='Total SAT Score', title='Total SAT Score Per County')
+# set the border and background color of the chart area
+fig.update_layout(
+    plot_bgcolor='white',
+    paper_bgcolor='lightgray',
+    width=800,
+    height=500,
+    shapes=[dict(type='rect', xref='paper',
+            yref='paper',
+            x0=0,
+            y0=0,
+            x1=1,
+            y1=1,
+            line=dict(
+                color='black',
+                width=2,
+            ),
+        )
+    ]
+)
+#display the graph
+fig.show()
+# Alternatively you can save the bar graph to an image using below line of code
+pio.write_image(fig, 'bar_graph.png')
 
 # isa proficiency
 isa_condensed_df = pd.DataFrame()
