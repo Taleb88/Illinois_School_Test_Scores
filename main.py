@@ -207,16 +207,20 @@ sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 # values in 'SAT Grade Status' -> Low, Mediocre, Decent, Good, Excellent
 status = []
 for grade in sat_condensed_df['Total SAT Score']:
-    if grade >= 1400:
-        status.append('Excellent')
-    elif grade >= 1000 and grade < 1400:
-        status.append('Proficient')
-    elif grade >= 800 and grade < 1000:
-        status.append('Decent')
-    elif grade >= 600 and grade < 800:
-        status.append('Mediocre')
-    else:
-        status.append('Low')
+    try:
+        if grade >= 1400:
+            status.append('Excellent')
+        elif grade >= 1000 and grade < 1400:
+            status.append('Proficient')
+        elif grade >= 800 and grade < 1000:
+            status.append('Decent')
+        elif grade >= 600 and grade < 800:
+            status.append('Mediocre')
+        else:
+            status.append('Low')
+            raise ValueError
+    except:
+        status.append('Not an appropriate value')
 
 sat_condensed_df['SAT Grade Status'] = status
 
