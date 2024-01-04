@@ -260,9 +260,22 @@ sat_condensed_avg_score_per_county_pivot_table = pd.pivot_table(
 )
 
 sat_condensed_avg_score_per_county_pivot_table.to_excel('sat_condensed_avg_score_per_county_pivot_table.xlsx')
+
+# creating a bar chart of isa proficiency pertaining to white students per school
+file = pd.read_excel('sat_condensed.xlsx')
+
+x_axis = file['County']
+y_axis = file['Total SAT Score']
+
+plt.bar(x_axis, y_axis, width=5)
+plt.xlabel("County")
+plt.ylabel("Total SAT Score Per County")
+plt.show()
+
 '''
 # creating a pie chart of total SAT scores per county
 fig = px.bar(sat_condensed_df, x='County', y='Total SAT Score', title='Total SAT Score Per County')
+
 # set the border and background color of the chart area
 fig.update_layout(
     plot_bgcolor='white',
@@ -287,6 +300,7 @@ fig.show()
 # Alternatively you can save the bar graph to an image using below line of code
 pio.write_image(fig, 'bar_graph.png')
 '''
+
 # isa proficiency
 isa_condensed_df = pd.DataFrame()
 rcdts = isa_df.iloc[:,0]
