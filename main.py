@@ -226,6 +226,11 @@ sat_condensed_df['SAT Grade Status'] = status
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 
+# bottom five lowest sat scores
+sat_condensed_bot_five_low_total_scores_df = sat_condensed_df['Total SAT Score'].sort_values(ascending=True).head()
+
+sat_condensed_bot_five_low_total_scores_df.to_excel('test.xlsx', index=False)
+
 # highlight the highest Total SAT Score value
 def highlight_max(data, color='green'):
     '''
@@ -261,7 +266,10 @@ sat_condensed_avg_score_per_county_pivot_table = pd.pivot_table(
 
 sat_condensed_avg_score_per_county_pivot_table.to_excel('sat_condensed_avg_score_per_county_pivot_table.xlsx')
 
-# creating a bar chart of isa proficiency pertaining to white students per school
+
+
+'''
+# creating a bar chart of total SAT scores per county
 file = pd.read_excel('sat_condensed.xlsx')
 
 x_axis = file['County']
@@ -271,6 +279,7 @@ plt.bar(x_axis, y_axis, width=5)
 plt.xlabel("County")
 plt.ylabel("Total SAT Score Per County")
 plt.show()
+'''
 
 '''
 # creating a pie chart of total SAT scores per county
@@ -711,3 +720,4 @@ plt.bar(x_axis, y_axis, width=5)
 plt.xlabel("Students w/Disabilities Per School")
 plt.ylabel("# ISA Proficiency Total Student")
 plt.show()
+
