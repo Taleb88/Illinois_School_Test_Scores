@@ -226,10 +226,19 @@ sat_condensed_df['SAT Grade Status'] = status
 
 sat_condensed_df.to_excel('sat_condensed.xlsx', index=False)
 
-# bottom five lowest sat scores
-sat_condensed_bot_five_low_total_scores_df = sat_condensed_df['Total SAT Score'].sort_values(ascending=True).head()
+# top 5 total sat scores school
+sat_condensed_top_five_high_total_scores_df = sat_condensed_df['Total SAT Score'].\
+    sort_values(ascending=False).head()
 
-sat_condensed_bot_five_low_total_scores_df.to_excel('test.xlsx', index=False)
+sat_condensed_top_five_high_total_scores_df.to_excel('sat_condensed_top_five_total_scores.xlsx',
+                                                    index=False)
+
+# bottom 5 total sat scores per school
+sat_condensed_bot_five_low_total_scores_df = sat_condensed_df['Total SAT Score'].\
+    sort_values(ascending=False).tail()
+
+sat_condensed_bot_five_low_total_scores_df.to_excel('sat_condensed_bottom_five_total_scores.xlsx',
+                                                    index=False)
 
 # highlight the highest Total SAT Score value
 def highlight_max(data, color='green'):
