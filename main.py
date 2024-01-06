@@ -933,7 +933,7 @@ ela_math_science_condensed_elementary_schools_df.to_excel(
     index=False
 )
 # middle schools only
-ela_math_science_condensed_df.to_excel(
+ela_math_science_condensed_middle_schools_df.to_excel(
     'ela_math_science_condensed_middle_schools.xlsx',
     index=False
 )
