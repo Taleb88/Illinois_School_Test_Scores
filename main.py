@@ -942,3 +942,8 @@ ela_math_science_condensed_preschools_df.to_excel(
     'ela_math_science_condensed_preschools.xlsx',
     index=False
 )
+
+# testing
+ela_only_df = ela_math_science_condensed_high_schools_df.drop(
+    columns = ['']
+)
