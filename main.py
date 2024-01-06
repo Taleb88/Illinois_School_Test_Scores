@@ -944,6 +944,12 @@ ela_math_science_condensed_preschools_df.to_excel(
 )
 
 # testing
-ela_only_df = ela_math_science_condensed_high_schools_df.drop(
-    columns = ['']
+test = [1,2,4,5,12]
+x = ela_math_science_condensed_df
+x.drop(
+    ela_math_science_condensed_df.columns[test],
+    axis=1,
+    inplace=True
 )
+
+x.to_excel('test.xlsx', index=False)
