@@ -261,11 +261,11 @@ sat_condensed_decent_total_scores_df =  \
 sat_condensed_decent_total_scores_df.to_excel('sat_condensed_total_scores_decent.xlsx',
                                                  index=False)
 
-# list of schools that scored 'decent' on total sat score values
-sat_condensed_decent_total_scores_df =  \
-    sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Decent')]
+# list of schools that scored 'mediocre' on total sat score values
+sat_condensed_mediocre_total_scores_df =  \
+    sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Mediocre')]
 
-sat_condensed_decent_total_scores_df.to_excel('sat_condensed_total_scores_decent.xlsx',
+sat_condensed_mediocre_total_scores_df.to_excel('sat_condensed_total_scores_mediocre.xlsx',
                                                  index=False)
 
 # highlight the highest Total SAT Score value
