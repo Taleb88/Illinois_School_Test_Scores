@@ -806,3 +806,8 @@ ela_math_science_condensed_df['# ELA Proficiency - Children with Disabilities'] 
     ela_math_science_proficiency_children_with_disabilities.copy()
 
 ela_math_science_condensed_df.to_excel('ela_math_science_condensed.xlsx', index=False)
+
+# delete rows with empty cell under School Name
+ela_math_science_condensed_df = delete_row(ela_math_science_condensed_df)
+
+ela_math_science_condensed_df.to_excel('ela_math_science_condensed.xlsx', index=False)
