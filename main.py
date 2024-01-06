@@ -247,6 +247,13 @@ sat_condensed_excellent_total_scores_df =  \
 sat_condensed_excellent_total_scores_df.to_excel('sat_condensed_total_scores_excellent.xlsx',
                                                  index=False)
 
+# list of schools that scored 'proficient' on total sat score values
+sat_condensed_proficient_total_scores_df =  \
+    sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Proficient')]
+
+sat_condensed_proficient_total_scores_df.to_excel('sat_condensed_total_scores_proficient.xlsx',
+                                                 index=False)
+
 # highlight the highest Total SAT Score value
 def highlight_max(data, color='green'):
     '''
@@ -281,8 +288,6 @@ sat_condensed_avg_score_per_county_pivot_table = pd.pivot_table(
 )
 
 sat_condensed_avg_score_per_county_pivot_table.to_excel('sat_condensed_avg_score_per_county_pivot_table.xlsx')
-
-
 
 '''
 # creating a bar chart of total SAT scores per county
