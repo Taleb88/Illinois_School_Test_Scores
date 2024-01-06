@@ -778,13 +778,17 @@ ela_math_science_condensed_df['District Size'] = district_size.copy()
 school_type = ela_math_science_df.iloc[:,8]
 ela_math_science_condensed_df['School Type'] = school_type.copy()
 ela_math_science_proficiency_total_student = ela_math_science_df.iloc[:,10]
-ela_math_science_condensed_df['# ELA Proficiency Total Student'] = ela_math_science_proficiency_total_student.copy()
+ela_math_science_condensed_df['# ELA Proficiency Total Student'] = \
+    ela_math_science_proficiency_total_student.copy()
 ela_math_science_proficiency_male = ela_math_science_df.iloc[:,11]
-ela_math_science_condensed_df['# ELA Proficiency - Male'] = ela_math_science_proficiency_male.copy()
+ela_math_science_condensed_df['# ELA Proficiency - Male'] = \
+    ela_math_science_proficiency_male.copy()
 ela_math_science_proficiency_female = ela_math_science_df.iloc[:,12]
-ela_math_science_condensed_df['# ELA Proficiency - Female'] = ela_math_science_proficiency_female.copy()
+ela_math_science_condensed_df['# ELA Proficiency - Female'] = \
+    ela_math_science_proficiency_female.copy()
 ela_math_science_proficiency_white = ela_math_science_df.iloc[:,13]
-ela_math_science_condensed_df['# ELA Proficiency - White'] = ela_math_science_proficiency_white.copy()
+ela_math_science_condensed_df['# ELA Proficiency - White'] = \
+    ela_math_science_proficiency_white.copy()
 ela_math_science_proficiency_black_or_african_american = ela_math_science_df.iloc[:,14]
 ela_math_science_condensed_df['# ELA Proficiency - Black or African American'] = \
     ela_math_science_proficiency_black_or_african_american.copy()
@@ -792,69 +796,90 @@ ela_math_science_proficiency_hispanic_or_latino = ela_math_science_df.iloc[:,15]
 ela_math_science_condensed_df['# ELA Proficiency - Hispanic or Latino'] = \
     ela_math_science_proficiency_hispanic_or_latino.copy()
 ela_math_science_proficiency_asian = ela_math_science_df.iloc[:,16]
-ela_math_science_condensed_df['# ELA Proficiency - Asian'] = ela_math_science_proficiency_asian.copy()
-ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander = ela_math_science_df.iloc[:,17]
+ela_math_science_condensed_df['# ELA Proficiency - Asian'] = \
+    ela_math_science_proficiency_asian.copy()
+ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander = \
+    ela_math_science_df.iloc[:,17]
 ela_math_science_condensed_df['# ELA Proficiency - Native Hawaiian or Other Pacific Islander'] = \
     ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander.copy()
-ela_math_science_proficiency_american_indian_or_alaska_native = ela_math_science_df.iloc[:,18]
+ela_math_science_proficiency_american_indian_or_alaska_native = \
+    ela_math_science_df.iloc[:,18]
 ela_math_science_condensed_df['# ELA Proficiency - American Indian or Alaska Native'] = \
     ela_math_science_proficiency_american_indian_or_alaska_native.copy()
 ela_math_science_proficiency_two_or_more_races = ela_math_science_df.iloc[:,19]
-ela_math_science_condensed_df['# ELA Proficiency - Two or More Races'] = ela_math_science_proficiency_two_or_more_races.copy()
+ela_math_science_condensed_df['# ELA Proficiency - Two or More Races'] = \
+    ela_math_science_proficiency_two_or_more_races.copy()
 ela_math_science_proficiency_children_with_disabilities = ela_math_science_df.iloc[:,20]
 ela_math_science_condensed_df['# ELA Proficiency - Children with Disabilities'] = \
     ela_math_science_proficiency_children_with_disabilities.copy()
 ela_math_science_proficiency_total_student = ela_math_science_df.iloc[:,46]
-ela_math_science_condensed_df['# Math Proficiency Total Student'] = ela_math_science_proficiency_total_student.copy()
+ela_math_science_condensed_df['# Math Proficiency Total Student'] = \
+    ela_math_science_proficiency_total_student.copy()
 ela_math_science_proficiency_male = ela_math_science_df.iloc[:,47]
-ela_math_science_condensed_df['# Math Proficiency - Male'] = ela_math_science_proficiency_male.copy()
+ela_math_science_condensed_df['# Math Proficiency - Male'] = \
+    ela_math_science_proficiency_male.copy()
 ela_math_science_proficiency_female = ela_math_science_df.iloc[:,48]
-ela_math_science_condensed_df['# Math Proficiency - Female'] = ela_math_science_proficiency_female.copy()
+ela_math_science_condensed_df['# Math Proficiency - Female'] = \
+    ela_math_science_proficiency_female.copy()
 ela_math_science_proficiency_white = ela_math_science_df.iloc[:,49]
-ela_math_science_condensed_df['# Math Proficiency - White'] = ela_math_science_proficiency_white.copy()
-ela_math_science_proficiency_black_or_african_american = ela_math_science_df.iloc[:,50]
+ela_math_science_condensed_df['# Math Proficiency - White'] = \
+    ela_math_science_proficiency_white.copy()
+ela_math_science_proficiency_black_or_african_american = \
+    ela_math_science_df.iloc[:,50]
 ela_math_science_condensed_df['# Math Proficiency - Black or African American'] = \
     ela_math_science_proficiency_black_or_african_american.copy()
 ela_math_science_proficiency_hispanic_or_latino = ela_math_science_df.iloc[:,51]
 ela_math_science_condensed_df['# Math Proficiency - Hispanic or Latino'] = \
     ela_math_science_proficiency_hispanic_or_latino.copy()
 ela_math_science_proficiency_asian = ela_math_science_df.iloc[:,52]
-ela_math_science_condensed_df['# Math Proficiency - Asian'] = ela_math_science_proficiency_asian.copy()
-ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander = ela_math_science_df.iloc[:,53]
+ela_math_science_condensed_df['# Math Proficiency - Asian'] = \
+    ela_math_science_proficiency_asian.copy()
+ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander = \
+    ela_math_science_df.iloc[:,53]
 ela_math_science_condensed_df['# Math Proficiency - Native Hawaiian or Other Pacific Islander'] = \
     ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander.copy()
 ela_math_science_proficiency_american_indian_or_alaska_native = ela_math_science_df.iloc[:,54]
 ela_math_science_condensed_df['# Math Proficiency - American Indian or Alaska Native'] = \
     ela_math_science_proficiency_american_indian_or_alaska_native.copy()
 ela_math_science_proficiency_two_or_more_races = ela_math_science_df.iloc[:,55]
-ela_math_science_condensed_df['# Math Proficiency - Two or More Races'] = ela_math_science_proficiency_two_or_more_races.copy()
+ela_math_science_condensed_df['# Math Proficiency - Two or More Races'] = \
+    ela_math_science_proficiency_two_or_more_races.copy()
 ela_math_science_proficiency_children_with_disabilities = ela_math_science_df.iloc[:,56]
 ela_math_science_condensed_df['# Math Proficiency - Children with Disabilities'] = \
     ela_math_science_proficiency_children_with_disabilities.copy()
 ela_math_science_proficiency_total_student = ela_math_science_df.iloc[:,208]
-ela_math_science_condensed_df['# Science Proficiency Total Student'] = ela_math_science_proficiency_total_student.copy()
+ela_math_science_condensed_df['# Science Proficiency Total Student'] = \
+    ela_math_science_proficiency_total_student.copy()
 ela_math_science_proficiency_male = ela_math_science_df.iloc[:,209]
-ela_math_science_condensed_df['# Science Proficiency - Male'] = ela_math_science_proficiency_male.copy()
+ela_math_science_condensed_df['# Science Proficiency - Male'] = \
+    ela_math_science_proficiency_male.copy()
 ela_math_science_proficiency_female = ela_math_science_df.iloc[:,210]
-ela_math_science_condensed_df['# Science Proficiency - Female'] = ela_math_science_proficiency_female.copy()
+ela_math_science_condensed_df['# Science Proficiency - Female'] = \
+    ela_math_science_proficiency_female.copy()
 ela_math_science_proficiency_white = ela_math_science_df.iloc[:,211]
-ela_math_science_condensed_df['# Science Proficiency - White'] = ela_math_science_proficiency_white.copy()
-ela_math_science_proficiency_black_or_african_american = ela_math_science_df.iloc[:,212]
+ela_math_science_condensed_df['# Science Proficiency - White'] = \
+    ela_math_science_proficiency_white.copy()
+ela_math_science_proficiency_black_or_african_american = \
+    ela_math_science_df.iloc[:,212]
 ela_math_science_condensed_df['# Science Proficiency - Black or African American'] = \
     ela_math_science_proficiency_black_or_african_american.copy()
 ela_math_science_proficiency_hispanic_or_latino = ela_math_science_df.iloc[:,213]
 ela_math_science_condensed_df['# Science Proficiency - Hispanic or Latino'] = \
     ela_math_science_proficiency_hispanic_or_latino.copy()
 ela_math_science_proficiency_asian = ela_math_science_df.iloc[:,214]
-ela_math_science_condensed_df['# Science Proficiency - Asian'] = ela_math_science_proficiency_asian.copy()
-ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander = ela_math_science_df.iloc[:,215]
+ela_math_science_condensed_df['# Science Proficiency - Asian'] = \
+    ela_math_science_proficiency_asian.copy()
+ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander = \
+    ela_math_science_df.iloc[:,215]
 ela_math_science_condensed_df['# Science Proficiency - Native Hawaiian or Other Pacific Islander'] = \
     ela_math_science_proficiency_native_hawaiian_or_other_pacific_islander.copy()
-ela_math_science_proficiency_american_indian_or_alaska_native = ela_math_science_df.iloc[:,216]
+ela_math_science_proficiency_american_indian_or_alaska_native = \
+    ela_math_science_df.iloc[:,216]
 ela_math_science_condensed_df['# Science Proficiency - American Indian or Alaska Native'] = \
     ela_math_science_proficiency_american_indian_or_alaska_native.copy()
 ela_math_science_proficiency_two_or_more_races = ela_math_science_df.iloc[:,217]
-ela_math_science_condensed_df['# Science Proficiency - Two or More Races'] = ela_math_science_proficiency_two_or_more_races.copy()
+ela_math_science_condensed_df['# Science Proficiency - Two or More Races'] = \
+    ela_math_science_proficiency_two_or_more_races.copy()
 ela_math_science_proficiency_children_with_disabilities = ela_math_science_df.iloc[:,218]
 ela_math_science_condensed_df['# Science Proficiency - Children with Disabilities'] = \
     ela_math_science_proficiency_children_with_disabilities.copy()
@@ -866,3 +891,54 @@ ela_math_science_condensed_df = delete_row(ela_math_science_condensed_df)
 
 ela_math_science_condensed_df.to_excel('ela_math_science_condensed.xlsx', index=False)
 
+# filter data to only high schools
+ela_math_science_condensed_high_schools_df = \
+    ela_math_science_condensed_df.loc[
+        (ela_math_science_condensed_df['School Type'] == 'HIGH SCHOOL')
+    ]
+# filter data to only charter schools
+ela_math_science_condensed_charter_schools_df = \
+    ela_math_science_condensed_df.loc[
+        (ela_math_science_condensed_df['School Type'] == 'CHARTER SCH')
+    ]
+# filter data to only elementary schools
+ela_math_science_condensed_elementary_schools_df = \
+    ela_math_science_condensed_df.loc[
+        (ela_math_science_condensed_df['School Type'] == 'ELEMENTARY')
+    ]
+# filter data to only middle schools
+ela_math_science_condensed_middle_schools_df = \
+    ela_math_science_condensed_df.loc[
+        (ela_math_science_condensed_df['School Type'] == 'MIDDLE SCHL')
+    ]
+# filter data to only preschools
+ela_math_science_condensed_preschools_df = \
+    ela_math_science_condensed_df.loc[
+        (ela_math_science_condensed_df['School Type'] == 'PreK')
+    ]
+
+# high schools only
+ela_math_science_condensed_high_schools_df.to_excel(
+    'ela_math_science_condensed_high_schools.xlsx',
+    index=False
+)
+# charter schools only
+ela_math_science_condensed_charter_schools_df.to_excel(
+    'ela_math_science_condensed_charter_schools.xlsx',
+    index=False
+)
+# elementary schools only
+ela_math_science_condensed_elementary_schools_df.to_excel(
+    'ela_math_science_condensed_elementary_schools.xlsx',
+    index=False
+)
+# middle schools only
+ela_math_science_condensed_df.to_excel(
+    'ela_math_science_condensed_middle_schools.xlsx',
+    index=False
+)
+# preschools only
+ela_math_science_condensed_preschools_df.to_excel(
+    'ela_math_science_condensed_preschools.xlsx',
+    index=False
+)
