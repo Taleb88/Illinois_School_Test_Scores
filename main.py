@@ -240,32 +240,39 @@ sat_condensed_bot_five_low_total_scores_df = sat_condensed_df['Total SAT Score']
 sat_condensed_bot_five_low_total_scores_df.to_excel('sat_condensed_bottom_five_total_scores.xlsx',
                                                     index=False)
 
-# list of schools that scored 'excellent' on total sat score values
+# list of schools with sat grade status = 'excellent'
 sat_condensed_excellent_total_scores_df =  \
     sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Excellent')]
 
 sat_condensed_excellent_total_scores_df.to_excel('sat_condensed_total_scores_excellent.xlsx',
                                                  index=False)
 
-# list of schools that scored 'proficient' on total sat score values
+# list of schools with sat grade status = 'proficient'
 sat_condensed_proficient_total_scores_df =  \
     sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Proficient')]
 
 sat_condensed_proficient_total_scores_df.to_excel('sat_condensed_total_scores_proficient.xlsx',
                                                  index=False)
 
-# list of schools that scored 'decent' on total sat score values
+# list of schools with sat grade status = 'decent'
 sat_condensed_decent_total_scores_df =  \
     sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Decent')]
 
 sat_condensed_decent_total_scores_df.to_excel('sat_condensed_total_scores_decent.xlsx',
                                                  index=False)
 
-# list of schools that scored 'mediocre' on total sat score values
+# list of schools with sat grade status = 'mediocre'
 sat_condensed_mediocre_total_scores_df =  \
     sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Mediocre')]
 
 sat_condensed_mediocre_total_scores_df.to_excel('sat_condensed_total_scores_mediocre.xlsx',
+                                                 index=False)
+
+# list of schools with sat grade status = 'low'
+sat_condensed_low_total_scores_df =  \
+    sat_condensed_df.loc[(sat_condensed_df['SAT Grade Status'] == 'Low')]
+
+sat_condensed_low_total_scores_df.to_excel('sat_condensed_total_scores_low.xlsx',
                                                  index=False)
 
 # highlight the highest Total SAT Score value
