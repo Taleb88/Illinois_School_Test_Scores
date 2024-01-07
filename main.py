@@ -891,7 +891,82 @@ ela_math_science_condensed_df = delete_row(ela_math_science_condensed_df)
 
 ela_math_science_condensed_df.to_excel('ela_math_science_condensed.xlsx', index=False)
 
+def high_schools(df):
+    try:
+        return df[df['School Type'] == 'HIGH SCHOOL']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot filter rows')
+              
+ela_math_science_condensed_high_schools_df = high_schools(ela_math_science_condensed_df)
 
+# high schools only
+ela_math_science_condensed_high_schools_df.to_excel(
+    'ela_math_science_condensed_high_schools.xlsx',
+    index=False
+)
+
+def charter_schools(df):
+    try:
+        return df[df['School Type'] == 'CHARTER SCH']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot filter rows')
+              
+ela_math_science_condensed_charter_schools_df = charter_schools(ela_math_science_condensed_df)
+
+# charter schools only
+ela_math_science_condensed_charter_schools_df.to_excel(
+    'ela_math_science_condensed_charter_schools.xlsx',
+    index=False
+)
+
+def elementary_schools(df):
+    try:
+        return df[df['School Type'] == 'ELEMENTARY']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot filter rows')
+              
+ela_math_science_condensed_elementary_schools_df = elementary_schools(ela_math_science_condensed_df)
+
+# elementary schools only
+ela_math_science_condensed_elementary_schools_df.to_excel(
+    'ela_math_science_condensed_elementary_schools.xlsx',
+    index=False
+)
+
+def middle_schools(df):
+    try:
+        return df[df['School Type'] == 'MIDDLE SCHL']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot filter rows')
+              
+ela_math_science_condensed_middle_schools_df = middle_schools(ela_math_science_condensed_df)
+
+# middle schools only
+ela_math_science_condensed_middle_schools_df.to_excel(
+    'ela_math_science_condensed_middle_schools.xlsx',
+    index=False
+)
+
+def preschools(df):
+    try:
+        return df[df['School Type'] == 'PreK']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot filter rows')
+              
+ela_math_science_condensed_preschools_df = preschools(ela_math_science_condensed_df)
+
+# preschools only
+ela_math_science_condensed_preschools_df.to_excel(
+    'ela_math_science_condensed_preschools.xlsx',
+    index=False
+)
+
+'''
 # filter data to only high schools
 ela_math_science_condensed_high_schools_df = \
     ela_math_science_condensed_df.loc[
@@ -943,7 +1018,191 @@ ela_math_science_condensed_preschools_df.to_excel(
     'ela_math_science_condensed_preschools.xlsx',
     index=False
 )
+'''
 
 # creating dataframes for ela, math, and science each
+# ela only
+ela_only_df = pd.DataFrame()
+rcdts = ela_math_science_df.iloc[:,0]
+ela_only_df['RCDTS'] = rcdts.copy()
+school_name = ela_math_science_df.iloc[:,2]
+ela_only_df['School Name'] = school_name.copy() # school name
+city = ela_math_science_df.iloc[:,4]
+ela_only_df['City'] = city.copy()
+county = ela_math_science_df.iloc[:,5]
+ela_only_df['County'] = county.copy()
+district_size = ela_math_science_df.iloc[:,7]
+ela_only_df['District Size'] = district_size.copy()
+school_type = ela_math_science_df.iloc[:,8]
+ela_only_df['School Type'] = school_type.copy()
+ela_proficiency_total_student = ela_math_science_df.iloc[:,10]
+ela_only_df['# ELA Proficiency Total Student'] = \
+    ela_proficiency_total_student.copy()
+ela_proficiency_male = ela_math_science_df.iloc[:,11]
+ela_only_df['# ELA Proficiency - Male'] = \
+    ela_proficiency_male.copy()
+ela_proficiency_female = ela_math_science_df.iloc[:,12]
+ela_only_df['# ELA Proficiency - Female'] = \
+    ela_proficiency_female.copy()
+ela_proficiency_white = ela_math_science_df.iloc[:,13]
+ela_only_df['# ELA Proficiency - White'] = \
+    ela_proficiency_white.copy()
+ela_proficiency_black_or_african_american = \
+    ela_math_science_df.iloc[:,14]
+ela_only_df['# ELA Proficiency - Black or African American'] = \
+    ela_proficiency_black_or_african_american.copy()
+ela_proficiency_hispanic_or_latino = ela_math_science_df.iloc[:,15]
+ela_only_df['# ELA Proficiency - Hispanic or Latino'] = \
+    ela_proficiency_hispanic_or_latino.copy()
+ela_proficiency_asian = ela_math_science_df.iloc[:,16]
+ela_only_df['# ELA Proficiency - Asian'] = \
+    ela_proficiency_asian.copy()
+ela_proficiency_native_hawaiian_or_other_pacific_islander = \
+    ela_math_science_df.iloc[:,17]
+ela_only_df['# ELA Proficiency - Native Hawaiian or Other Pacific Islander'] = \
+    ela_proficiency_native_hawaiian_or_other_pacific_islander.copy()
+ela_proficiency_american_indian_or_alaska_native = ela_math_science_df.iloc[:,18]
+ela_only_df['# ELA Proficiency - American Indian or Alaska Native'] = \
+    ela_proficiency_american_indian_or_alaska_native.copy()
+ela_proficiency_two_or_more_races = ela_math_science_df.iloc[:,19]
+ela_only_df['# ELA Proficiency - Two or More Races'] = \
+    ela_proficiency_two_or_more_races.copy()
+ela_proficiency_children_with_disabilities = ela_math_science_df.iloc[:,20]
+ela_only_df['# ELA Proficiency - Children with Disabilities'] = \
+    ela_proficiency_children_with_disabilities.copy()
+# data of all school types in one doc
+ela_only_df.to_excel('ela_only.xlsx', index=False)
+# delete row not containing name of school
+ela_only_df = delete_row(ela_only_df)
+
+ela_only_df.to_excel('ela_only.xlsx', index=False)
+
+# create 1 doc per school type for ela only
+
+# dataframe for math only
+math_only_df = pd.DataFrame()
+rcdts = ela_math_science_df.iloc[:,0]
+math_only_df['RCDTS'] = rcdts.copy()
+school_name = ela_math_science_df.iloc[:,2]
+math_only_df['School Name'] = school_name.copy() # school name
+city = ela_math_science_df.iloc[:,4]
+math_only_df['City'] = city.copy()
+county = ela_math_science_df.iloc[:,5]
+math_only_df['County'] = county.copy()
+district_size = ela_math_science_df.iloc[:,7]
+math_only_df['District Size'] = district_size.copy()
+school_type = ela_math_science_df.iloc[:,8]
+math_only_df['School Type'] = school_type.copy()
+math_proficiency_total_student = ela_math_science_df.iloc[:,46]
+math_only_df['# Math Proficiency Total Student'] = \
+    math_proficiency_total_student.copy()
+math_proficiency_male = ela_math_science_df.iloc[:,47]
+math_only_df['# Math Proficiency - Male'] = \
+    math_proficiency_male.copy()
+math_proficiency_female = ela_math_science_df.iloc[:,48]
+math_only_df['# Math Proficiency - Female'] = \
+    math_proficiency_female.copy()
+math_proficiency_white = ela_math_science_df.iloc[:,49]
+math_only_df['# Math Proficiency - White'] = \
+    math_proficiency_white.copy()
+math_proficiency_black_or_african_american = \
+    ela_math_science_df.iloc[:,50]
+math_only_df['# Math Proficiency - Black or African American'] = \
+    math_proficiency_black_or_african_american.copy()
+math_proficiency_hispanic_or_latino = ela_math_science_df.iloc[:,51]
+math_only_df['# Math Proficiency - Hispanic or Latino'] = \
+    math_proficiency_hispanic_or_latino.copy()
+math_proficiency_asian = ela_math_science_df.iloc[:,52]
+math_only_df['# Math Proficiency - Asian'] = \
+    math_proficiency_asian.copy()
+math_proficiency_native_hawaiian_or_other_pacific_islander = \
+    ela_math_science_df.iloc[:,53]
+math_only_df['# Math Proficiency - Native Hawaiian or Other Pacific Islander'] = \
+    math_proficiency_native_hawaiian_or_other_pacific_islander.copy()
+math_proficiency_american_indian_or_alaska_native = ela_math_science_df.iloc[:,54]
+math_only_df['# Math Proficiency - American Indian or Alaska Native'] = \
+    math_proficiency_american_indian_or_alaska_native.copy()
+math_proficiency_two_or_more_races = ela_math_science_df.iloc[:,55]
+math_only_df['# Math Proficiency - Two or More Races'] = \
+    math_proficiency_two_or_more_races.copy()
+math_proficiency_children_with_disabilities = ela_math_science_df.iloc[:,56]
+math_only_df['# Math Proficiency - Children with Disabilities'] = \
+    math_proficiency_children_with_disabilities.copy()
+
+math_only_df.to_excel('math_only.xlsx', index=False)
+
+math_only_df = delete_row(math_only_df)
+
+math_only_df.to_excel('math_only.xlsx', index=False)
+
+# create 1 doc per school type for math only
+
+# dataframe for science only
+science_only_df = pd.DataFrame()
+rcdts = ela_math_science_df.iloc[:,0]
+science_only_df['RCDTS'] = rcdts.copy()
+school_name = ela_math_science_df.iloc[:,2]
+science_only_df['School Name'] = school_name.copy() # school name
+city = ela_math_science_df.iloc[:,4]
+science_only_df['City'] = city.copy()
+county = ela_math_science_df.iloc[:,5]
+science_only_df['County'] = county.copy()
+district_size = ela_math_science_df.iloc[:,7]
+science_only_df['District Size'] = district_size.copy()
+school_type = ela_math_science_df.iloc[:,8]
+science_only_df['School Type'] = school_type.copy()
+science_proficiency_total_student = ela_math_science_df.iloc[:,208]
+science_only_df['# Science Proficiency Total Student'] = \
+    science_proficiency_total_student.copy()
+science_proficiency_male = ela_math_science_df.iloc[:,209]
+science_only_df['# Science Proficiency - Male'] = \
+    science_proficiency_male.copy()
+science_proficiency_female = ela_math_science_df.iloc[:,210]
+science_only_df['# Science Proficiency - Female'] = \
+    science_proficiency_female.copy()
+science_proficiency_white = ela_math_science_df.iloc[:,211]
+science_only_df['# Science Proficiency - White'] = \
+    science_proficiency_white.copy()
+science_proficiency_black_or_african_american = \
+    ela_math_science_df.iloc[:,212]
+science_only_df['# Science Proficiency - Black or African American'] = \
+    science_proficiency_black_or_african_american.copy()
+science_proficiency_hispanic_or_latino = ela_math_science_df.iloc[:,213]
+science_only_df['# Science Proficiency - Hispanic or Latino'] = \
+    science_proficiency_hispanic_or_latino.copy()
+science_proficiency_asian = ela_math_science_df.iloc[:,214]
+science_only_df['# Science Proficiency - Asian'] = \
+    science_proficiency_asian.copy()
+science_proficiency_native_hawaiian_or_other_pacific_islander = \
+    ela_math_science_df.iloc[:,215]
+science_only_df['# Science Proficiency - Native Hawaiian or Other Pacific Islander'] = \
+    science_proficiency_native_hawaiian_or_other_pacific_islander.copy()
+science_proficiency_american_indian_or_alaska_native = \
+    ela_math_science_df.iloc[:,216]
+science_only_df['# Science Proficiency - American Indian or Alaska Native'] = \
+    science_proficiency_american_indian_or_alaska_native.copy()
+science_proficiency_two_or_more_races = ela_math_science_df.iloc[:,217]
+science_only_df['# Science Proficiency - Two or More Races'] = \
+    science_proficiency_two_or_more_races.copy()
+science_proficiency_children_with_disabilities = ela_math_science_df.iloc[:,218]
+science_only_df['# Science Proficiency - Children with Disabilities'] = \
+    science_proficiency_children_with_disabilities.copy()
+
+science_only_df.to_excel('science_only.xlsx', index=False)
+
+science_only_df = delete_row(science_only_df)
+
+science_only_df.to_excel('math_only.xlsx', index=False)
+
+# create 1 doc per school type for science only
 
 # pivot tables
+ela_only_pivot_table_df = pd.pivot_table(
+    ela_only_df,
+    index='School Name',
+    columns='School Type',
+    values='# ELA Proficiency Total Student',
+    aggfunc='sum'
+)
+
+ela_only_pivot_table_df.to_excel('ela_proficiency_total_student_pivot_table.xlsx') # 0 value populated for preschools
