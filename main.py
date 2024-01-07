@@ -52,7 +52,8 @@ discipline_condensed_df.to_excel('discipline_condensed.xlsx', index=False)
 
 # sort by alphabetical order
 discipline_condensed_df = discipline_condensed_df.sort_values(
-    by='School Name', ascending=True
+    by='School Name',
+    ascending=True
 )
 
 discipline_condensed_df.to_excel('discipline_condensed.xlsx', index=False)
@@ -1135,7 +1136,7 @@ math_only_df = delete_row(math_only_df)
 
 math_only_df.to_excel('math_only.xlsx', index=False)
 
-# create 1 doc per school type for math only
+# create 1 excel sheet per school type for math only
 
 # dataframe for science only
 science_only_df = pd.DataFrame()
@@ -1194,7 +1195,8 @@ science_only_df = delete_row(science_only_df)
 
 science_only_df.to_excel('math_only.xlsx', index=False)
 
-# create 1 doc per school type for science only
+# create 1 excel doc per school type for science only ex: science_high_school_only.xlsx,
+# ref functions for school types
 
 # pivot tables
 ela_only_pivot_table_df = pd.pivot_table(
