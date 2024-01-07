@@ -891,6 +891,7 @@ ela_math_science_condensed_df = delete_row(ela_math_science_condensed_df)
 
 ela_math_science_condensed_df.to_excel('ela_math_science_condensed.xlsx', index=False)
 
+
 # filter data to only high schools
 ela_math_science_condensed_high_schools_df = \
     ela_math_science_condensed_df.loc[
@@ -943,13 +944,4 @@ ela_math_science_condensed_preschools_df.to_excel(
     index=False
 )
 
-# creating ela only doc
-columns_dropped = [17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]
-ela_only_df = ela_math_science_condensed_df
-ela_only_df.drop(
-    ela_math_science_condensed_df.columns[columns_dropped],
-    axis=1,
-    inplace=True
-)
-
-ela_only_df.to_excel('ela_only.xlsx', index=False)
+# pivot tables
