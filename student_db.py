@@ -60,10 +60,10 @@ insert_records = "INSERT INTO math_proficiency " \
                  "No_Math_Proficiency_Children_with_Disabilities) " \
                  "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
-# importing contents of csv into math_only table
+# importing contents of csv into math_proficiency table
 cursor.executemany(insert_records, contents)
 
-# sql query retrieving all data from math_only table
+# sql query retrieving all data from math_proficiency table
 #   to verify that the data from the cvs was successfully
 #   inserted into the aforementioned table
 select_all = "SELECT * FROM math_proficiency"
