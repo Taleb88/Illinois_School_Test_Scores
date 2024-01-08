@@ -8,13 +8,13 @@ connection = sqlite3.connect('test.db')
 #   from sql queries
 cursor = connection.cursor()
 
-# defining a test table
+# creating a test table
 create_table = "CREATE TABLE test_table(" \
                "id INTEGER PRIMARY KEY AUTOINCREMENT," \
                "Column1 TEXT NOT NULL, " \
                "Column2 TEXT NOT NULL);"
 
-# creating test table into our db
+# putting the test table into our db
 cursor.execute(create_table)
 
 # open csv file we want to ingest into our db -> test.db
