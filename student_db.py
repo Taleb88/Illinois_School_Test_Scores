@@ -8,26 +8,27 @@ connection = sqlite3.connect('student.db')
 #   from sql queries
 cursor = connection.cursor()
 
-# creating a math_only table
-create_table =  "CREATE TABLE math_only("\
+# creating a math_proficiency table
+#   should be school_name and school_type, no spaces on others
+create_table =  "CREATE TABLE math_proficiency("\
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," \
                 "RCDTS INTEGER," \
-                "School Name TEXT," \
+                "School_Name TEXT," \
                 "City TEXT," \
                 "County TEXT," \
-                "District Size TEXT," \
-                "School Type TEXT," \
-                "# Math Proficiency Total Student INTEGER," \
-                "# Math Proficiency - Male INTEGER," \
-                "# Math Proficiency - Female INTEGER," \
-                "# Math Proficiency - White INTEGER," \
-                "# Math Proficiency - Black or African American INTEGER," \
-                "# Math Proficiency - Hispanic or Latino INTEGER," \
-                "# Math Proficiency - Asian INTEGER," \
-                "# Math Proficiency - Native Hawaiian or Other Pacific Islander INTEGER," \
-                "# Math Proficiency - American Indian or Alaska Native INTEGER," \
-                "# Math Proficiency - Two or More Races INTEGER," \
-                "# Math Proficiency - Children with Disabilities INTEGER);"
+                "District_Size TEXT," \
+                "School_Type TEXT," \
+                "No_Math_Proficiency_Total_Student INTEGER," \
+                "No_Math_Proficiency_Male INTEGER," \
+                "No_Math_Proficiency_Female INTEGER," \
+                "No_Math_Proficiency_White INTEGER," \
+                "No_Math_Proficiency_Black_or_African_American INTEGER," \
+                "No_Math_Proficiency_Hispanic_or_Latino INTEGER," \
+                "No_Math_Proficiency_Asian INTEGER," \
+                "No_Math_Proficiency_Native_Hawaiian_or_Other_Pacific_Islander INTEGER," \
+                "No_Math_Proficiency_American_Indian_or_Alaska_Native INTEGER," \
+                "No_Math_Proficiency_Two_or_More_Races INTEGER," \
+                "No_Math_Proficiency_Children_with_Disabilities INTEGER);"
 
 # putting the math_proficiency table into our db
 cursor.execute(create_table)
@@ -40,23 +41,23 @@ contents = csv.reader(file)
 
 # sql query to insert data from csv into math_proficiency table
 insert_records = "INSERT INTO math_proficiency " \
-                 "(RCDTS," \
-                 "School Name," \
+                 "(RCDTS,"\
+                 "School_Name," \
                  "City," \
                  "County," \
-                 "District Size," \
-                 "School Type" \
-                 "# Math Proficiency Total Student," \
-                 "# Math Proficiency - Male," \
-                 "# Math Proficiency - Female," \
-                 "# Math Proficiency - White," \
-                 "# Math Proficiency - Black or African American," \
-                 "# Math Proficiency - Hispanic or Latino," \
-                 "# Math Proficiency - Asian," \
-                 "# Math Proficiency - Native Hawaiian or Other Pacific Islander," \
-                 "# Math Proficiency - American Indian or Alaska Native," \
-                 "# Math Proficiency - Two or More Races," \
-                 "# Math Proficiency - Children with Disabilities) " \
+                 "District_Size," \
+                 "School_Type," \
+                 "No_Math_Proficiency_Total_Student," \
+                 "No_Math_Proficiency_Male," \
+                 "No_Math_Proficiency_Female," \
+                 "No_Math_Proficiency_White," \
+                 "No_Math_Proficiency_Black_or_African_American," \
+                 "No_Math_Proficiency_Hispanic_or_Latino," \
+                 "No_Math_Proficiency_Asian," \
+                 "No_Math_Proficiency_Native_Hawaiian_or_Other_Pacific_Islander," \
+                 "No_Math_Proficiency_American_Indian_or_Alaska_Native," \
+                 "No_Math_Proficiency_Two_or_More_Races," \
+                 "No_Math_Proficiency_Children_with_Disabilities) " \
                  "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
 # importing contents of csv into math_only table
@@ -65,15 +66,15 @@ cursor.executemany(insert_records, contents)
 # sql query retrieving all data from math_only table
 #   to verify that the data from the cvs was successfully
 #   inserted into the aforementioned table
-select_all = "SELECT * FROM math_only"
+select_all = "SELECT * FROM math_proficiency"
 rows = cursor.execute(select_all).fetchall()
 
 # print to console
-for r in rows():
+for r in rows:
     print(r)
 
 # commit changes
 connection.commit()
 
 # close the db connection
-connect.close()
+connection.close()
