@@ -2,12 +2,12 @@
 import csv
 import sqlite3
 
-# connect to database
+# connect to database (creating student.db)
 connection = sqlite3.connect('student.db')
 # database cursor used to executive sql statements and fetch results
 #   from sql queries
 cursor = connection.cursor()
-
+'''
 # creating a math_proficiency table
 #   should be school_name and school_type, no spaces on others
 create_table =  "CREATE TABLE math_proficiency("\
@@ -78,3 +78,6 @@ connection.commit()
 
 # close the db connection
 connection.close()
+'''
+
+# develop ela table in student.db
