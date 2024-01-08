@@ -1077,6 +1077,7 @@ ela_only_df.to_excel('ela_only.xlsx', index=False)
 ela_only_df = delete_row(ela_only_df)
 
 ela_only_df.to_excel('ela_only.xlsx', index=False)
+ela_only_df.to_csv('ela_only.csv', index=False)
 
 # create 1 doc per school type for ela only
 
@@ -1135,6 +1136,7 @@ math_only_df.to_excel('math_only.xlsx', index=False)
 math_only_df = delete_row(math_only_df)
 
 math_only_df.to_excel('math_only.xlsx', index=False)
+math_only_df.to_csv('math_only.csv', index=False)
 
 # create 1 excel sheet per school type for math only
 
@@ -1194,6 +1196,7 @@ science_only_df.to_excel('science_only.xlsx', index=False)
 science_only_df = delete_row(science_only_df)
 
 science_only_df.to_excel('science_only.xlsx', index=False)
+science_only_df.to_csv('science_only.csv', index=False)
 
 # create 1 excel doc per school type for science only ex: science_high_school_only.xlsx,
 # ref functions for school types
