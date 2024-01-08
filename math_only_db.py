@@ -8,6 +8,30 @@ connection = sqlite3.connect('math_student_proficiency.db')
 #   from sql queries
 cursor = connection.cursor()
 
+# creating a test table
+create_table =  "CREATE TABLE match_proficiency("\
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+                "RCDTS INT," \
+                "School Name TEXT," \
+                "City TEXT," \
+                "County TEXT," \
+                "District Size TEXT," \
+                "School Type TEXT," \
+                "# Math Proficiency Total Student ," \
+                "# Math Proficiency - Male," \
+                "# Math Proficiency - Female," \
+                "# Math Proficiency - White," \
+                "# Math Proficiency - Black or African American," \
+                "# Math Proficiency - Hispanic or Latino," \
+                "# Math Proficiency - Asian," \
+                "# Math Proficiency - Native Hawaiian or Other Pacific Islander," \
+                "# Math Proficiency - American Indian or Alaska Native," \
+                "# Math Proficiency - Two or More Races," \
+                "# Math Proficiency - Children with Disabilities);"
+
+# putting the math_proficiency table into our db
+cursor.execute(create_table)
+
 # open csv file we want to ingest into our db -> math_student_proficiency.db
 file = open('math_only.csv')
 
