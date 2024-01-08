@@ -3,31 +3,31 @@ import csv
 import sqlite3
 
 # connect to database
-connection = sqlite3.connect('math_student_proficiency.db')
+connection = sqlite3.connect('student.db')
 # database cursor used to executive sql statements and fetch results
 #   from sql queries
 cursor = connection.cursor()
 
-# creating a test table
-create_table =  "CREATE TABLE match_proficiency("\
+# creating a math_only table
+create_table =  "CREATE TABLE math_only("\
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," \
-                "RCDTS INT," \
+                "RCDTS INTEGER," \
                 "School Name TEXT," \
                 "City TEXT," \
                 "County TEXT," \
                 "District Size TEXT," \
                 "School Type TEXT," \
-                "# Math Proficiency Total Student ," \
-                "# Math Proficiency - Male," \
-                "# Math Proficiency - Female," \
-                "# Math Proficiency - White," \
-                "# Math Proficiency - Black or African American," \
-                "# Math Proficiency - Hispanic or Latino," \
-                "# Math Proficiency - Asian," \
-                "# Math Proficiency - Native Hawaiian or Other Pacific Islander," \
-                "# Math Proficiency - American Indian or Alaska Native," \
-                "# Math Proficiency - Two or More Races," \
-                "# Math Proficiency - Children with Disabilities);"
+                "# Math Proficiency Total Student INTEGER," \
+                "# Math Proficiency - Male INTEGER," \
+                "# Math Proficiency - Female INTEGER," \
+                "# Math Proficiency - White INTEGER," \
+                "# Math Proficiency - Black or African American INTEGER," \
+                "# Math Proficiency - Hispanic or Latino INTEGER," \
+                "# Math Proficiency - Asian INTEGER," \
+                "# Math Proficiency - Native Hawaiian or Other Pacific Islander INTEGER," \
+                "# Math Proficiency - American Indian or Alaska Native INTEGER," \
+                "# Math Proficiency - Two or More Races INTEGER," \
+                "# Math Proficiency - Children with Disabilities INTEGER);"
 
 # putting the math_proficiency table into our db
 cursor.execute(create_table)
