@@ -1115,6 +1115,15 @@ ela_middle_schools_only_df.to_excel(
     index=False
 )
 
+# filter out all rows except preschools
+ela_preschools_only_df = preschools(ela_only_df)
+
+# preschools only
+ela_preschools_only_df.to_excel(
+    'ela_preschools_only.xlsx',
+    index=False
+)
+
 # dataframe for math only
 math_only_df = pd.DataFrame()
 rcdts = ela_math_science_df.iloc[:,0]
@@ -1173,6 +1182,50 @@ math_only_df.to_excel('math_only.xlsx', index=False)
 math_only_df.to_csv('math_only.csv', index=False)
 
 # create 1 excel sheet per school type for math only
+# filter out all rows except high schools
+math_high_schools_only_df = high_schools(math_only_df)
+
+# high schools only
+math_high_schools_only_df.to_excel(
+    'math_high_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except charter schools
+math_charter_schools_only_df = charter_schools(math_only_df)
+
+# charter schools only
+math_charter_schools_only_df.to_excel(
+    'math_charter_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except elementary schools
+math_elementary_schools_only_df = elementary_schools(math_only_df)
+
+# elementary schools only
+math_elementary_schools_only_df.to_excel(
+    'math_elementary_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except middle schools
+math_middle_schools_only_df = middle_schools(math_only_df)
+
+# middle schools only
+math_middle_schools_only_df.to_excel(
+    'math_middle_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except preschools
+math_preschools_only_df = preschools(math_only_df)
+
+# preschools only
+math_preschools_only_df.to_excel(
+    'math_preschools_only.xlsx',
+    index=False
+)
 
 # dataframe for science only
 science_only_df = pd.DataFrame()
