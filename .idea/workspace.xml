@@ -19,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed_preschools.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed_preschools.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_middle_schools_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_middle_schools_only.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_only.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ela_preschools_only.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_proficiency_total_student_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_proficiency_total_student_pivot_table.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finance_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/finance_condensed.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/incident_numbers_reported.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/incident_numbers_reported.xlsx" afterDir="false" />
@@ -55,6 +56,7 @@
       <change beforePath="$PROJECT_DIR$/sat_condensed_total_scores_mediocre.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sat_condensed_total_scores_mediocre.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sat_condensed_total_scores_proficient.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sat_condensed_total_scores_proficient.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/science_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/science_only.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sum_of_incidents_per_city_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sum_of_incidents_per_city_pivot_table.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sum_of_incidents_per_school_type_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sum_of_incidents_per_school_type_pivot_table.xlsx" afterDir="false" />
     </list>
