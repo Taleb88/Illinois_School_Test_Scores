@@ -1329,8 +1329,8 @@ science_proficiency_preschools_only_df.to_excel(
     index=False
 )
 
-# pivot tables
-ela_only_pivot_table_df = pd.pivot_table(
+# ela only total student per school type pivot table
+ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(
     ela_only_df,
     index='School Name',
     columns='School Type',
@@ -1338,4 +1338,17 @@ ela_only_pivot_table_df = pd.pivot_table(
     aggfunc='sum'
 )
 
-ela_only_pivot_table_df.to_excel('ela_proficiency_total_student_pivot_table.xlsx') # 0 value populated for preschools
+ela_only_total_student_per_school_type_pivot_table_df.to_excel\
+    ('ela_proficiency_total_student_pivot_table.xlsx') # 0 value populated for preschools
+
+# ela only average per school type pivot table
+ela_only_student_quantity_average_pivot_table_df = pd.pivot_table(
+    ela_only_df,
+    index='School Name',
+    columns='School Type',
+    values='# ELA Proficiency Total Student',
+    aggfunc='mean'
+)
+
+ela_only_student_quantity_average_pivot_table_df.to_excel\
+    ('ela_proficiency_student_quantity_average_pivot_table.xlsx') # 0 value populated for preschools
