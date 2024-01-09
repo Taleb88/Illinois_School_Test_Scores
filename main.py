@@ -1227,7 +1227,6 @@ math_proficiency_preschools_only_df.to_excel(
     index=False
 )
 
-
 # dataframe for science only
 science_only_df = pd.DataFrame()
 rcdts = ela_math_science_df.iloc[:,0]
@@ -1286,9 +1285,50 @@ science_only_df = delete_row(science_only_df)
 science_only_df.to_excel('science_only.xlsx', index=False)
 science_only_df.to_csv('science_only.csv', index=False)
 
-# create 1 excel doc per school type for science only ex: science_high_school_only.xlsx,
-# ref functions for school types
+# filter out all rows except high schools
+science_proficiency_high_schools_only_df = high_schools(science_only_df)
 
+# high schools only
+science_proficiency_high_schools_only_df.to_excel(
+    'science_proficiency_high_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except charter schools
+science_proficiency_charter_schools_only_df = charter_schools(science_only_df)
+
+# charter schools only
+science_proficiency_charter_schools_only_df.to_excel(
+    'science_proficiency_charter_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except elementary schools
+science_proficiency_elementary_schools_only_df = elementary_schools(science_only_df)
+
+# elementary schools only
+science_proficiency_elementary_schools_only_df.to_excel(
+    'science_proficiency_elementary_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except middle schools
+science_proficiency_middle_schools_only_df = middle_schools(science_only_df)
+
+# middle schools only
+science_proficiency_middle_schools_only_df.to_excel(
+    'science_proficiency_middle_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except preschools
+science_proficiency_preschools_only_df = preschools(science_only_df)
+
+# preschools only
+science_proficiency_preschools_only_df.to_excel(
+    'science_proficiency_preschools_only.xlsx',
+    index=False
+)
 
 # pivot tables
 ela_only_pivot_table_df = pd.pivot_table(
