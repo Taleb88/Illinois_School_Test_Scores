@@ -1097,6 +1097,15 @@ ela_charter_schools_only_df.to_excel(
     index=False
 )
 
+# filter out all rows except elementary schools
+ela_elementary_schools_only_df = elementary_schools(ela_only_df)
+
+# elementary schools only
+ela_elementary_schools_only_df.to_excel(
+    'ela_elementary_schools_only.xlsx',
+    index=False
+)
+
 # dataframe for math only
 math_only_df = pd.DataFrame()
 rcdts = ela_math_science_df.iloc[:,0]
