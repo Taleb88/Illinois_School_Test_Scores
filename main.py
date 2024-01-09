@@ -1080,6 +1080,13 @@ ela_only_df.to_excel('ela_only.xlsx', index=False)
 ela_only_df.to_csv('ela_only.csv', index=False)
 
 # create 1 doc per school type for ela only
+ela_high_schools_only_df = high_schools(ela_only_df)
+
+# high schools only
+ela_high_schools_only_df.to_excel(
+    'ela_high_schools_only.xlsx',
+    index=False
+)
 
 # dataframe for math only
 math_only_df = pd.DataFrame()
@@ -1200,6 +1207,7 @@ science_only_df.to_csv('science_only.csv', index=False)
 
 # create 1 excel doc per school type for science only ex: science_high_school_only.xlsx,
 # ref functions for school types
+
 
 # pivot tables
 ela_only_pivot_table_df = pd.pivot_table(
