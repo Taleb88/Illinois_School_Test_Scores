@@ -1181,7 +1181,6 @@ math_only_df = delete_row(math_only_df)
 math_only_df.to_excel('math_only.xlsx', index=False)
 math_only_df.to_csv('math_only.csv', index=False)
 
-# create 1 excel sheet per school type for math only
 # filter out all rows except high schools
 math_proficiency_high_schools_only_df = high_schools(math_only_df)
 

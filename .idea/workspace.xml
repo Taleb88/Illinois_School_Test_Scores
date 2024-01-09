@@ -8,16 +8,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discipline_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/discipline_condensed.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discipline_finance_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/discipline_finance_condensed.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ela_charter_schools_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_charter_schools_only.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ela_elementary_schools_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_elementary_schools_only.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ela_high_schools_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_high_schools_only.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ela_charter_schools_only.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ela_elementary_schools_only.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ela_high_schools_only.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed_charter_schools.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed_charter_schools.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed_elementary_schools.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed_elementary_schools.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed_high_schools.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed_high_schools.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed_middle_schools.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed_middle_schools.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_math_science_condensed_preschools.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_math_science_condensed_preschools.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ela_middle_schools_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_middle_schools_only.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ela_middle_schools_only.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_only.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_preschools_only.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ela_proficiency_total_student_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ela_proficiency_total_student_pivot_table.xlsx" afterDir="false" />
@@ -43,7 +43,12 @@
       <change beforePath="$PROJECT_DIR$/isa_condensed_white_students_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_condensed_white_students_data.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/isa_pivot_table_all_races_concat.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/isa_pivot_table_all_races_concat.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_charter_schools_only.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_elementary_schools_only.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_high_schools_only.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_middle_schools_only.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/math_only.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/math_only.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math_preschools_only.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pivot_table_white_and_black_student_concat.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/pivot_table_white_and_black_student_concat.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sat_condensed.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sat_condensed.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sat_condensed_avg_score_per_county_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/sat_condensed_avg_score_per_county_pivot_table.xlsx" afterDir="false" />
