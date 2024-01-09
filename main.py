@@ -29,7 +29,6 @@ school_name = discipline_df.iloc[:,2]
 discipline_condensed_df['School Name'] = school_name.copy() # school name
 city = discipline_df.iloc[:,4]
 discipline_condensed_df['City'] = city.copy() # city
-
 school_type = discipline_df.iloc[:,8]
 discipline_condensed_df['School Type'] = school_type.copy() # school type
 number_of_discipline_incidents = discipline_df.iloc[:,11]
@@ -111,6 +110,7 @@ def incident_numbers_reported(df):
 incident_numbers_df = incident_numbers_reported(discipline_condensed_df)
 
 incident_numbers_df.to_excel('incident_numbers_reported.xlsx', index=False)
+
 
 # pivot table - total student incident numbers of each city
 total_incident_num_per_city_df = pd.pivot_table(incident_numbers_df,
@@ -1328,6 +1328,20 @@ science_proficiency_preschools_only_df.to_excel(
     'science_proficiency_preschools_only.xlsx',
     index=False
 )
+
+# populate missing values to = 0
+ela_proficiency_charter_schools_only_df = \
+    ela_proficiency_charter_schools_only_df.fillna(0)
+ela_proficiency_elementary_schools_only_df = \
+    ela_proficiency_elementary_schools_only_df.fillna(0)
+ela_proficiency_high_schools_only_df = \
+    ela_proficiency_high_schools_only_df.fillna(0)
+ela_proficiency_middle_schools_only_df = \
+    ela_proficiency_middle_schools_only_df.fillna(0)
+ela_proficiency_preschools_only_df = \
+    ela_proficiency_preschools_only_df.fillna(0)
+
+ela_proficiency_charter_schools_only_df.to_excel('ela_proficiency_charter_schools_only.xlsx', index=False)
 
 # ela only total student per school type pivot table
 ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(

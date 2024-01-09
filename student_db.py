@@ -80,6 +80,7 @@ connection.commit()
 connection.close()
 '''
 
+'''
 # develop ela_proficiency table in student.db (all school types)
 #   should be school_name and school_type, no spaces on others
 create_table =  "CREATE TABLE ela_proficiency("\
@@ -150,3 +151,4 @@ connection.commit()
 
 # close the db connection
 connection.close()
+'''
