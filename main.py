@@ -1079,12 +1079,21 @@ ela_only_df = delete_row(ela_only_df)
 ela_only_df.to_excel('ela_only.xlsx', index=False)
 ela_only_df.to_csv('ela_only.csv', index=False)
 
-# create 1 doc per school type for ela only
+# filter out all rows except high schools
 ela_high_schools_only_df = high_schools(ela_only_df)
 
 # high schools only
 ela_high_schools_only_df.to_excel(
     'ela_high_schools_only.xlsx',
+    index=False
+)
+
+# filter out all rows except charter schools
+ela_charter_schools_only_df = charter_schools(ela_only_df)
+
+# charter schools only
+ela_charter_schools_only_df.to_excel(
+    'ela_charter_schools_only.xlsx',
     index=False
 )
 
