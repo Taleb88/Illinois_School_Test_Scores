@@ -1106,6 +1106,15 @@ ela_elementary_schools_only_df.to_excel(
     index=False
 )
 
+# filter out all rows except middle schools
+ela_middle_schools_only_df = middle_schools(ela_only_df)
+
+# middle schools only
+ela_middle_schools_only_df.to_excel(
+    'ela_middle_schools_only.xlsx',
+    index=False
+)
+
 # dataframe for math only
 math_only_df = pd.DataFrame()
 rcdts = ela_math_science_df.iloc[:,0]
