@@ -1080,49 +1080,50 @@ ela_only_df.to_excel('ela_only.xlsx', index=False)
 ela_only_df.to_csv('ela_only.csv', index=False)
 
 # filter out all rows except high schools
-ela_high_schools_only_df = high_schools(ela_only_df)
+ela_proficiency_high_schools_only_df = high_schools(ela_only_df)
 
 # high schools only
-ela_high_schools_only_df.to_excel(
-    'ela_high_schools_only.xlsx',
+ela_proficiency_high_schools_only_df.to_excel(
+    'ela_proficiency_high_schools_only.xlsx',
     index=False
 )
 
 # filter out all rows except charter schools
-ela_charter_schools_only_df = charter_schools(ela_only_df)
+ela_proficiency_charter_schools_only_df = charter_schools(ela_only_df)
 
 # charter schools only
-ela_charter_schools_only_df.to_excel(
-    'ela_charter_schools_only.xlsx',
+ela_proficiency_charter_schools_only_df.to_excel(
+    'ela_proficiency_charter_schools_only.xlsx',
     index=False
 )
 
 # filter out all rows except elementary schools
-ela_elementary_schools_only_df = elementary_schools(ela_only_df)
+ela_proficiency_elementary_schools_only_df = elementary_schools(ela_only_df)
 
 # elementary schools only
-ela_elementary_schools_only_df.to_excel(
-    'ela_elementary_schools_only.xlsx',
+ela_proficiency_elementary_schools_only_df.to_excel(
+    'ela_proficiency_elementary_schools_only.xlsx',
     index=False
 )
 
 # filter out all rows except middle schools
-ela_middle_schools_only_df = middle_schools(ela_only_df)
+ela_proficiency_middle_schools_only_df = middle_schools(ela_only_df)
 
 # middle schools only
-ela_middle_schools_only_df.to_excel(
-    'ela_middle_schools_only.xlsx',
+ela_proficiency_middle_schools_only_df.to_excel(
+    'ela_proficiency_middle_schools_only.xlsx',
     index=False
 )
 
 # filter out all rows except preschools
-ela_preschools_only_df = preschools(ela_only_df)
+ela_proficiency_preschools_only_df = preschools(ela_only_df)
 
 # preschools only
-ela_preschools_only_df.to_excel(
-    'ela_preschools_only.xlsx',
+ela_proficiency_preschools_only_df.to_excel(
+    'ela_proficiency_preschools_only.xlsx',
     index=False
 )
+
 
 # dataframe for math only
 math_only_df = pd.DataFrame()
