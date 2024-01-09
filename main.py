@@ -1351,4 +1351,4 @@ ela_only_student_quantity_average_pivot_table_df = pd.pivot_table(
 )
 
 ela_only_student_quantity_average_pivot_table_df.to_excel\
-    ('ela_proficiency_student_quantity_average_pivot_table.xlsx') # 0 value populated for preschools
+    ('ela_proficiency_student_quantity_average_pivot_table.xlsx') # preschools excluded
