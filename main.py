@@ -1341,7 +1341,11 @@ ela_proficiency_middle_schools_only_df = \
 ela_proficiency_preschools_only_df = \
     ela_proficiency_preschools_only_df.fillna(0)
 
-ela_proficiency_charter_schools_only_df.to_excel('ela_proficiency_charter_schools_only.xlsx', index=False)
+# empty cells populated to = 0
+ela_proficiency_charter_schools_only_df.\
+    to_excel('ela_proficiency_charter_schools_only.xlsx', index=False)
+ela_proficiency_elementary_schools_only_df.\
+    to_excel('ela_proficiency_elementary_schools_only.xlsx', index=False)
 
 # ela only total student per school type pivot table
 ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(
