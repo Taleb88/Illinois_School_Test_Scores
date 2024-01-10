@@ -1148,6 +1148,9 @@ ela_proficiency_middle_schools_only_df.\
 ela_proficiency_preschools_only_df.\
     to_excel('ela_proficiency_preschools_only.xlsx', index=False) # all # isa proficiency values expected to be 0
 
+# 1. create sheets per district size -> small, medium, large
+# 2. for loop to create extra status column (exclude preschools)
+
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
     ['N/A'] * len(ela_proficiency_preschools_only_df)
@@ -1345,7 +1348,6 @@ science_only_df = delete_row(science_only_df)
 
 science_only_df.to_excel('science_only.xlsx', index=False)
 science_only_df.to_csv('science_only.csv', index=False)
-
 
 # filter out all rows except high schools
 science_proficiency_high_schools_only_df = high_schools(science_only_df)
