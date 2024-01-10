@@ -1459,3 +1459,29 @@ ela_only_black_or_african_american_student_total_pivot_table_df = pd.pivot_table
 
 ela_only_black_or_african_american_student_total_pivot_table_df.to_excel\
     ('ela_only_black_or_african_american_student_total_pivot_table.xlsx')
+
+# math only sum per district size pivot table
+# index = school name, columns = district size, values = # Math Proficiency - Black or African American
+math_only_black_or_african_american_student_total_pivot_table_df = pd.pivot_table(
+    math_only_df,
+    index='School Name',
+    columns='District Size',
+    values='# Math Proficiency - Black or African American',
+    aggfunc='sum'
+)
+
+math_only_black_or_african_american_student_total_pivot_table_df.to_excel\
+    ('math_only_black_or_african_american_student_total_pivot_table.xlsx')
+
+# science only sum per district size pivot table
+# index = school name, columns = district size, values = # Science Proficiency - Black or African American
+science_only_black_or_african_american_student_total_pivot_table_df = pd.pivot_table(
+    science_only_df,
+    index='School Name',
+    columns='District Size',
+    values='# Science Proficiency - Black or African American',
+    aggfunc='sum'
+)
+
+science_only_black_or_african_american_student_total_pivot_table_df.to_excel\
+    ('science_only_black_or_african_american_student_total_pivot_table.xlsx')
