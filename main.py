@@ -1332,6 +1332,7 @@ science_only_df = delete_row(science_only_df)
 science_only_df.to_excel('science_only.xlsx', index=False)
 science_only_df.to_csv('science_only.csv', index=False)
 
+
 # filter out all rows except high schools
 science_proficiency_high_schools_only_df = high_schools(science_only_df)
 
@@ -1376,6 +1377,30 @@ science_proficiency_preschools_only_df.to_excel(
     'science_proficiency_preschools_only.xlsx',
     index=False
 )
+
+# populate missing values to = 0
+science_proficiency_charter_schools_only_df = \
+    science_proficiency_charter_schools_only_df.fillna(0)
+science_proficiency_elementary_schools_only_df = \
+    science_proficiency_elementary_schools_only_df.fillna(0)
+science_proficiency_high_schools_only_df = \
+    science_proficiency_high_schools_only_df.fillna(0)
+science_proficiency_middle_schools_only_df = \
+    science_proficiency_middle_schools_only_df.fillna(0)
+science_proficiency_preschools_only_df = \
+    science_proficiency_preschools_only_df.fillna(0)
+
+# empty cells populated to = 0
+science_proficiency_charter_schools_only_df.\
+    to_excel('science_proficiency_charter_schools_only.xlsx', index=False)
+science_proficiency_elementary_schools_only_df.\
+    to_excel('science_proficiency_elementary_schools_only.xlsx', index=False)
+science_proficiency_high_schools_only_df.\
+    to_excel('science_proficiency_high_schools_only.xlsx', index=False)
+science_proficiency_middle_schools_only_df.\
+    to_excel('science_proficiency_middle_schools_only.xlsx', index=False)
+science_proficiency_preschools_only_df.\
+    to_excel('science_proficiency_preschools_only.xlsx', index=False) # all # sci proficiency values expected to = 0
 
 # ela only total student per school type pivot table
 ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(
