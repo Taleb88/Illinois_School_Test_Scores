@@ -1146,7 +1146,7 @@ ela_proficiency_high_schools_only_df.\
 ela_proficiency_middle_schools_only_df.\
     to_excel('ela_proficiency_middle_schools_only.xlsx', index=False)
 ela_proficiency_preschools_only_df.\
-    to_excel('ela_proficiency_preschools_only.xlsx', index=False)
+    to_excel('ela_proficiency_preschools_only.xlsx', index=False) # all # isa proficiency values expected to be 0
 
 # dataframe for math only
 math_only_df = pd.DataFrame()
