@@ -1485,3 +1485,8 @@ science_only_black_or_african_american_student_total_pivot_table_df = pd.pivot_t
 
 science_only_black_or_african_american_student_total_pivot_table_df.to_excel\
     ('science_only_black_or_african_american_student_total_pivot_table.xlsx')
+
+# join columns on merge, left ->
+# ex: math_only_black_or_african_american_student_total_pivot_table_df,
+#     science_only_black_or_african_american_student_total_pivot_table_df
+# on = 'School Name'
