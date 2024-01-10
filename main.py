@@ -1148,7 +1148,12 @@ ela_proficiency_middle_schools_only_df.\
 ela_proficiency_preschools_only_df.\
     to_excel('ela_proficiency_preschools_only.xlsx', index=False) # all # isa proficiency values expected to be 0
 
+# add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
+ela_proficiency_preschools_only_df['Status'] =\
+    ['N/A'] * len(ela_proficiency_preschools_only_df)
 
+ela_proficiency_preschools_only_df.\
+    to_excel('ela_proficiency_preschools_only.xlsx', index=False)
 
 # dataframe for math only
 math_only_df = pd.DataFrame()
