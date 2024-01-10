@@ -1416,6 +1416,13 @@ science_proficiency_middle_schools_only_df.\
 science_proficiency_preschools_only_df.\
     to_excel('science_proficiency_preschools_only.xlsx', index=False) # all # sci proficiency values expected to = 0
 
+# add status column to math_proficiency_preschools_only_df and set all values to = 'N/A'
+science_proficiency_preschools_only_df['Status'] =\
+    ['N/A'] * len(science_proficiency_preschools_only_df)
+
+science_proficiency_preschools_only_df.\
+    to_excel('science_proficiency_preschools_only.xlsx', index=False)
+
 # ela only total student per school type pivot table
 ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(
     ela_only_df,
@@ -1439,3 +1446,16 @@ ela_only_student_quantity_average_pivot_table_df = pd.pivot_table(
 
 ela_only_student_quantity_average_pivot_table_df.to_excel\
     ('ela_proficiency_student_quantity_average_pivot_table.xlsx') # preschools excluded
+
+# ela only sum per district size pivot table
+# index = school name, columns = district size, values = # ELA Proficiency - Black or African American
+ela_only_black_or_african_american_student_total_pivot_table_df = pd.pivot_table(
+    ela_only_df,
+    index='School Name',
+    columns='District Size',
+    values='# ELA Proficiency - Black or African American',
+    aggfunc='sum'
+)
+
+ela_only_black_or_african_american_student_total_pivot_table_df.to_excel\
+    ('ela_only_black_or_african_american_student_total_pivot_table.xlsx')
