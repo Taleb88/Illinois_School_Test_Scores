@@ -1250,6 +1250,30 @@ math_proficiency_preschools_only_df.to_excel(
     index=False
 )
 
+# populate missing values to = 0
+math_proficiency_charter_schools_only_df = \
+    math_proficiency_charter_schools_only_df.fillna(0)
+math_proficiency_elementary_schools_only_df = \
+    math_proficiency_elementary_schools_only_df.fillna(0)
+math_proficiency_high_schools_only_df = \
+    math_proficiency_high_schools_only_df.fillna(0)
+math_proficiency_middle_schools_only_df = \
+    math_proficiency_middle_schools_only_df.fillna(0)
+math_proficiency_preschools_only_df = \
+    math_proficiency_preschools_only_df.fillna(0)
+
+# empty cells populated to = 0
+math_proficiency_charter_schools_only_df.\
+    to_excel('math_proficiency_charter_schools_only.xlsx', index=False)
+math_proficiency_elementary_schools_only_df.\
+    to_excel('math_proficiency_elementary_schools_only.xlsx', index=False)
+math_proficiency_high_schools_only_df.\
+    to_excel('math_proficiency_high_schools_only.xlsx', index=False)
+math_proficiency_middle_schools_only_df.\
+    to_excel('math_proficiency_middle_schools_only.xlsx', index=False)
+math_proficiency_preschools_only_df.\
+    to_excel('math_proficiency_preschools_only.xlsx', index=False) # all # math proficiency values expected to be 0
+
 # dataframe for science only
 science_only_df = pd.DataFrame()
 rcdts = ela_math_science_df.iloc[:,0]
