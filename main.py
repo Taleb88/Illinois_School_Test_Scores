@@ -1124,6 +1124,30 @@ ela_proficiency_preschools_only_df.to_excel(
     index=False
 )
 
+# populate missing values to = 0
+ela_proficiency_charter_schools_only_df = \
+    ela_proficiency_charter_schools_only_df.fillna(0)
+ela_proficiency_elementary_schools_only_df = \
+    ela_proficiency_elementary_schools_only_df.fillna(0)
+ela_proficiency_high_schools_only_df = \
+    ela_proficiency_high_schools_only_df.fillna(0)
+ela_proficiency_middle_schools_only_df = \
+    ela_proficiency_middle_schools_only_df.fillna(0)
+ela_proficiency_preschools_only_df = \
+    ela_proficiency_preschools_only_df.fillna(0)
+
+# empty cells populated to = 0
+ela_proficiency_charter_schools_only_df.\
+    to_excel('ela_proficiency_charter_schools_only.xlsx', index=False)
+ela_proficiency_elementary_schools_only_df.\
+    to_excel('ela_proficiency_elementary_schools_only.xlsx', index=False)
+ela_proficiency_high_schools_only_df.\
+    to_excel('ela_proficiency_high_schools_only.xlsx', index=False)
+ela_proficiency_middle_schools_only_df.\
+    to_excel('ela_proficiency_middle_schools_only.xlsx', index=False)
+ela_proficiency_preschools_only_df.\
+    to_excel('ela_proficiency_preschools_only.xlsx', index=False)
+
 # dataframe for math only
 math_only_df = pd.DataFrame()
 rcdts = ela_math_science_df.iloc[:,0]
@@ -1328,30 +1352,6 @@ science_proficiency_preschools_only_df.to_excel(
     'science_proficiency_preschools_only.xlsx',
     index=False
 )
-
-# populate missing values to = 0
-ela_proficiency_charter_schools_only_df = \
-    ela_proficiency_charter_schools_only_df.fillna(0)
-ela_proficiency_elementary_schools_only_df = \
-    ela_proficiency_elementary_schools_only_df.fillna(0)
-ela_proficiency_high_schools_only_df = \
-    ela_proficiency_high_schools_only_df.fillna(0)
-ela_proficiency_middle_schools_only_df = \
-    ela_proficiency_middle_schools_only_df.fillna(0)
-ela_proficiency_preschools_only_df = \
-    ela_proficiency_preschools_only_df.fillna(0)
-
-# empty cells populated to = 0
-ela_proficiency_charter_schools_only_df.\
-    to_excel('ela_proficiency_charter_schools_only.xlsx', index=False)
-ela_proficiency_elementary_schools_only_df.\
-    to_excel('ela_proficiency_elementary_schools_only.xlsx', index=False)
-ela_proficiency_high_schools_only_df.\
-    to_excel('ela_proficiency_high_schools_only.xlsx', index=False)
-ela_proficiency_middle_schools_only_df.\
-    to_excel('ela_proficiency_middle_schools_only.xlsx', index=False)
-ela_proficiency_preschools_only_df.\
-    to_excel('ela_proficiency_preschools_only.xlsx', index=False)
 
 # ela only total student per school type pivot table
 ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(
