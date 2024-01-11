@@ -1171,7 +1171,7 @@ def small_district_size(df):
     except Exception as e:
         print(f'caught {type(e)}: e \n '
               f'Cannot delete rows with data not compliant to small_district_size()')
-
+#charter schools
 ela_proficiency_charter_schools_large_district_size_only_df = \
     large_district_size(ela_proficiency_charter_schools_only_df)
 
@@ -1189,6 +1189,29 @@ ela_proficiency_charter_schools_small_district_size_only_df = \
 
 ela_proficiency_charter_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
+#elementary schools
+ela_proficiency_elementary_schools_large_district_size_only_df = \
+    large_district_size(ela_proficiency_elementary_schools_only_df)
+
+ela_proficiency_elementary_schools_large_district_size_only_df.\
+    to_excel('ela_proficiency_elementary_schools_large_district_size_only.xlsx', index=False)
+
+ela_proficiency_elementary_schools_medium_district_size_only_df = \
+    medium_district_size(ela_proficiency_elementary_schools_only_df)
+
+ela_proficiency_elementary_schools_medium_district_size_only_df.\
+    to_excel('ela_proficiency_elementary_schools_medium_district_size_only.xlsx', index=False)
+
+ela_proficiency_elementary_schools_small_district_size_only_df = \
+    small_district_size(ela_proficiency_elementary_schools_only_df)
+
+ela_proficiency_elementary_schools_small_district_size_only_df.\
+    to_excel('ela_proficiency_elementary_schools_small_district_size_only.xlsx', index=False)
+#high schools
+
+#middle schools
+
+#preschools
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
