@@ -1399,6 +1399,9 @@ math_proficiency_middle_schools_only_df.\
 math_proficiency_preschools_only_df.\
     to_excel('math_proficiency_preschools_only.xlsx', index=False) # all # math proficiency values expected to be 0
 
+# *TO BE DEVELOPED* - IN PROGRESS
+# 1. create sheets per district size -> small, medium, large (create functions for each district size)
+# 2. for loop to create extra status column (exclude preschools) for each district doc (ELA/MATH/SCIENCE)
 #charter schools
 math_proficiency_charter_schools_large_district_size_only_df = \
     large_district_size(math_proficiency_charter_schools_only_df)
@@ -1628,7 +1631,100 @@ science_proficiency_middle_schools_only_df.\
 science_proficiency_preschools_only_df.\
     to_excel('science_proficiency_preschools_only.xlsx', index=False) # all # sci proficiency values expected to = 0
 
+# *TO BE DEVELOPED* - IN PROGRESS
+# 1. create sheets per district size -> small, medium, large (create functions for each district size)
+# 2. for loop to create extra status column (exclude preschools) for each district doc (ELA/MATH/SCIENCE)
 
+#charter schools
+science_proficiency_charter_schools_large_district_size_only_df = \
+    large_district_size(science_proficiency_charter_schools_only_df)
+
+science_proficiency_charter_schools_large_district_size_only_df.\
+    to_excel('science_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
+
+science_proficiency_charter_schools_medium_district_size_only_df = \
+    medium_district_size(science_proficiency_charter_schools_only_df)
+
+science_proficiency_charter_schools_medium_district_size_only_df.\
+    to_excel('science_proficiency_charter_schools_medium_district_size_only.xlsx', index=False)
+
+science_proficiency_charter_schools_small_district_size_only_df = \
+    small_district_size(science_proficiency_charter_schools_only_df)
+
+science_proficiency_charter_schools_small_district_size_only_df.\
+    to_excel('science_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
+#elementary schools
+science_proficiency_elementary_schools_large_district_size_only_df = \
+    large_district_size(science_proficiency_elementary_schools_only_df)
+
+science_proficiency_elementary_schools_large_district_size_only_df.\
+    to_excel('science_proficiency_elementary_schools_large_district_size_only.xlsx', index=False)
+
+science_proficiency_elementary_schools_medium_district_size_only_df = \
+    medium_district_size(science_proficiency_elementary_schools_only_df)
+
+science_proficiency_elementary_schools_medium_district_size_only_df.\
+    to_excel('science_proficiency_elementary_schools_medium_district_size_only.xlsx', index=False)
+
+science_proficiency_elementary_schools_small_district_size_only_df = \
+    small_district_size(science_proficiency_elementary_schools_only_df)
+
+science_proficiency_elementary_schools_small_district_size_only_df.\
+    to_excel('science_proficiency_elementary_schools_small_district_size_only.xlsx', index=False)
+#high schools
+science_proficiency_high_schools_large_district_size_only_df = \
+    large_district_size(science_proficiency_high_schools_only_df)
+
+science_proficiency_high_schools_large_district_size_only_df.\
+    to_excel('science_proficiency_high_schools_large_district_size_only.xlsx', index=False)
+
+science_proficiency_high_schools_medium_district_size_only_df = \
+    medium_district_size(science_proficiency_high_schools_only_df)
+
+science_proficiency_high_schools_medium_district_size_only_df.\
+    to_excel('science_proficiency_high_schools_medium_district_size_only.xlsx', index=False)
+
+science_proficiency_high_schools_small_district_size_only_df = \
+    small_district_size(science_proficiency_high_schools_only_df)
+
+science_proficiency_high_schools_small_district_size_only_df.\
+    to_excel('science_proficiency_high_schools_small_district_size_only.xlsx', index=False)
+#middle schools
+science_proficiency_middle_schools_large_district_size_only_df = \
+    large_district_size(science_proficiency_middle_schools_only_df)
+
+science_proficiency_middle_schools_large_district_size_only_df.\
+    to_excel('science_proficiency_middle_schools_large_district_size_only.xlsx', index=False)
+
+science_proficiency_middle_schools_medium_district_size_only_df = \
+    medium_district_size(science_proficiency_middle_schools_only_df)
+
+science_proficiency_middle_schools_medium_district_size_only_df.\
+    to_excel('science_proficiency_middle_schools_medium_district_size_only.xlsx', index=False)
+
+science_proficiency_middle_schools_small_district_size_only_df = \
+    small_district_size(science_proficiency_middle_schools_only_df)
+
+science_proficiency_middle_schools_small_district_size_only_df.\
+    to_excel('science_proficiency_middle_schools_small_district_size_only.xlsx', index=False)
+#preschools
+science_proficiency_preschools_large_district_size_only_df = \
+    large_district_size(science_proficiency_preschools_only_df)
+
+science_proficiency_preschools_large_district_size_only_df.\
+    to_excel('science_proficiency_preschools_large_district_size_only.xlsx', index=False)
+
+science_proficiency_preschools_medium_district_size_only_df = \
+    medium_district_size(science_proficiency_preschools_only_df)
+
+science_proficiency_preschools_medium_district_size_only_df.\
+    to_excel('science_proficiency_preschools_medium_district_size_only.xlsx', index=False)
+
+science_proficiency_preschools_small_district_size_only_df = \
+    small_district_size(science_proficiency_preschools_only_df)
+
+science_proficiency_preschools_small_district_size_only_df.\
+    to_excel('science_proficiency_preschools_small_district_size_only.xlsx', index=False)
 
 
 
