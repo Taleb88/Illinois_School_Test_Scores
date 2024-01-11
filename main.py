@@ -1150,7 +1150,7 @@ ela_proficiency_preschools_only_df.\
 
 # *TO BE DEVELOPED*
 # 1. create sheets per district size -> small, medium, large (create functions for each district size)
-# 2. for loop to create extra status column (exclude preschools)
+# 2. for loop to create extra status column (exclude preschools) for each district doc (ELA/MATH/SCIENCE)
 def large_district_size(df):
     try:
         return df[df['District Size'] == 'LARGE']
