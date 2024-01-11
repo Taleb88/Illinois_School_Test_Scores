@@ -1163,7 +1163,7 @@ def medium_district_size(df):
         return df[df['District Size'] == 'MEDIUM']
     except Exception as e:
         print(f'caught {type(e)}: e \n '
-              f'Cannot delete rows with data not compliant to large_district_size()')
+              f'Cannot delete rows with data not compliant to small_district_size()')
 
 ela_proficiency_charter_schools_large_district_size_only_df = \
     large_district_size(ela_proficiency_charter_schools_only_df)
