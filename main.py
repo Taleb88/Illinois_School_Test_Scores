@@ -1628,6 +1628,14 @@ science_proficiency_middle_schools_only_df.\
 science_proficiency_preschools_only_df.\
     to_excel('science_proficiency_preschools_only.xlsx', index=False) # all # sci proficiency values expected to = 0
 
+
+
+
+
+
+
+# *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
+
 # add status column to math_proficiency_preschools_only_df and set all values to = 'N/A'
 science_proficiency_preschools_only_df['Status'] =\
     ['N/A'] * len(science_proficiency_preschools_only_df)
