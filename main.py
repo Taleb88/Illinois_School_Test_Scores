@@ -1727,10 +1727,8 @@ science_proficiency_preschools_small_district_size_only_df.\
     to_excel('science_proficiency_preschools_small_district_size_only.xlsx', index=False)
 
 
-
-
-
 # *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
+
 
 # add status column to math_proficiency_preschools_only_df and set all values to = 'N/A'
 science_proficiency_preschools_only_df['Status'] =\
