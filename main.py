@@ -1178,6 +1178,12 @@ ela_proficiency_charter_schools_large_district_size_only_df = \
 ela_proficiency_charter_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
 
+ela_proficiency_charter_schools_small_district_size_only_df = \
+    small_district_size(ela_proficiency_charter_schools_only_df)
+
+ela_proficiency_charter_schools_small_district_size_only_df.\
+    to_excel('ela_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
+
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
     ['N/A'] * len(ela_proficiency_preschools_only_df)
