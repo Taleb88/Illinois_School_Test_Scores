@@ -1477,7 +1477,8 @@ math_only_black_or_african_american_student_total_pivot_table_df.to_excel\
     ('math_only_black_or_african_american_student_total_pivot_table.xlsx')
 
 # science only sum per district size pivot table
-# index = school name, columns = district size, values = # Science Proficiency - Black or African American
+# index = school name, columns = district size,
+# values = # Science Proficiency - Black or African American
 science_only_black_or_african_american_student_total_pivot_table_df = pd.pivot_table(
     science_only_df,
     index='School Name',
@@ -1492,4 +1493,13 @@ science_only_black_or_african_american_student_total_pivot_table_df.to_excel\
 # join columns on merge, left ->
 # ex: math_only_black_or_african_american_student_total_pivot_table_df,
 #     science_only_black_or_african_american_student_total_pivot_table_df
-# on = 'School Name'
+# on = 'District Size'
+math_and_science_only_black_or_african_american_student_table = pd.merge(
+    math_only_black_or_african_american_student_total_pivot_table_df,
+    science_only_black_or_african_american_student_total_pivot_table_df,
+    on='School Name'
+)
+
+math_and_science_only_black_or_african_american_student_table.to_excel(
+    'math_and_science_only_black_or_african_american_student_table.xlsx'
+)
