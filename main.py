@@ -1178,6 +1178,12 @@ ela_proficiency_charter_schools_large_district_size_only_df = \
 ela_proficiency_charter_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
 
+ela_proficiency_charter_schools_medium_district_size_only_df = \
+    medium_district_size(ela_proficiency_charter_schools_only_df)
+
+ela_proficiency_charter_schools_medium_district_size_only_df.\
+    to_excel('ela_proficiency_charter_schools_medium_district_size_only.xlsx', index=False)
+
 ela_proficiency_charter_schools_small_district_size_only_df = \
     small_district_size(ela_proficiency_charter_schools_only_df)
 
