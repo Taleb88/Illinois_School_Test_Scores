@@ -1151,6 +1151,25 @@ ela_proficiency_preschools_only_df.\
 # *TO BE DEVELOPED*
 # 1. create sheets per district size -> small, medium, large (create functions for each district size)
 # 2. for loop to create extra status column (exclude preschools)
+def large_district_size(df):
+    try:
+        return df[df['District Size'] == 'LARGE']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot delete rows with data not compliant to large_district_size()')
+
+def medium_district_size(df):
+    try:
+        return df[df['District Size'] == 'MEDIUM']
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot delete rows with data not compliant to large_district_size()')
+
+ela_proficiency_charter_schools_large_district_size_only_df = \
+    large_district_size(ela_proficiency_charter_schools_only_df)
+
+ela_proficiency_charter_schools_large_district_size_only_df.\
+    to_excel('ela_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
