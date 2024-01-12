@@ -482,7 +482,21 @@ def grab_isa_hispanic_students_data(df): # find all the non-missing values ONLY
 isa_condensed_hispanic_students_data_df = grab_isa_hispanic_students_data(isa_condensed_gender_df)
 
 # create updated version of isa condensed hispanic students data
-isa_condensed_hispanic_students_data_df.to_excel('isa_condensed_hispanic_students_data.xlsx', index=False)
+isa_condensed_hispanic_students_data_df.to_excel('isa_condensed_hispanic_students_data.xlsx',
+                                                 index=False)
+# drop # isa columns that are not relative to hispanic students in the dataframe
+isa_condensed_hispanic_students_data_df = isa_condensed_hispanic_students_data_df.\
+    drop(['# ISA Proficiency - White',
+          '# ISA Proficiency - Black or African American',
+          '# ISA Proficiency - Asian',
+          '# ISA Proficiency - Native Hawaiian or Other Pacific Islander',
+          '# ISA Proficiency - American Indian or Alaska Native',
+          '# ISA Proficiency - Two or More Races',
+          '# ISA Proficiency - Children with Disabilities'],
+         axis=1)
+
+isa_condensed_hispanic_students_data_df.to_excel('isa_condensed_hispanic_students_data.xlsx',
+                                                 index=False)
 
 # if the # isa proficiency values of asian students is blank, remove row
 def grab_isa_asian_students_data(df): # find all the non-missing values ONLY
