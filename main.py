@@ -1266,8 +1266,8 @@ ela_proficiency_preschools_small_district_size_only_df.\
 
 
 # *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
-# charter schools + districts, elementary schools + districts,
-# high schools + districts, middle schools + districts
+#   charter schools + districts, elementary schools + districts,
+#   high schools + districts, middle schools + districts
 status = []
 
 for student in ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
@@ -1321,6 +1321,8 @@ ela_proficiency_charter_schools_small_district_size_only_df['Status'] = status
 
 ela_proficiency_charter_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
+
+
 
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
