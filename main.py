@@ -5,8 +5,6 @@ import plotly.express as px
 import plotly.io as pio
 from warnings import simplefilter # suppresses warning, allows > 100 columns to be created in new dataframe
 simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
-from pandas.core.common import SettingWithCopyWarning # suppresses warning, do not need loc to create column in df
-warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
 general_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='General')
 finance_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='Finance')
@@ -1266,7 +1264,8 @@ ela_proficiency_preschools_small_district_size_only_df.\
 
 
 # *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
-# charter schools, elementary schools, high schools, middle schools
+# charter schools + districts, elementary schools + districts,
+# high schools + districts, middle schools + districts
 status = []
 
 for student in ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
