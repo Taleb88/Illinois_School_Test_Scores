@@ -432,7 +432,14 @@ isa_condensed_white_students_data_df.to_excel('isa_condensed_white_students_data
 
 # drop # isa columns that are not relative to black students in the dataframe
 isa_condensed_white_students_data_df = isa_condensed_white_students_data_df.\
-    drop(['# ISA Proficiency - Black or African American'], axis=1)
+    drop(['# ISA Proficiency - Black or African American',
+          '# ISA Proficiency - Hispanic or Latino',
+          '# ISA Proficiency - Asian',
+          '# ISA Proficiency - Native Hawaiian or Other Pacific Islander',
+          '# ISA Proficiency - American Indian or Alaska Native',
+          '# ISA Proficiency - Two or More Races',
+          '# ISA Proficiency - Children with Disabilities'],
+         axis=1)
 
 isa_condensed_white_students_data_df.to_excel('isa_condensed_white_students_data.xlsx', index=False)
 
