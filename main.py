@@ -1,10 +1,12 @@
 import pandas as pd
+pd.options.mode.chained_assignment = None  # default='warn'
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.io as pio
 from warnings import simplefilter # suppresses warning, allows > 100 columns to be created in new dataframe
 simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
+
 
 general_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='General')
 finance_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='Finance')
