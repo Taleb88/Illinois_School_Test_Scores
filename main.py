@@ -1322,6 +1322,114 @@ ela_proficiency_charter_schools_small_district_size_only_df['Status'] = status
 ela_proficiency_charter_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
 
+status = []
+
+for student in ela_proficiency_elementary_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_elementary_schools_large_district_size_only_df['Status'] = status
+
+ela_proficiency_elementary_schools_large_district_size_only_df.\
+    to_excel('ela_proficiency_elementary_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_elementary_schools_medium_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_elementary_schools_medium_district_size_only_df['Status'] = status
+
+ela_proficiency_elementary_schools_medium_district_size_only_df.\
+    to_excel('ela_proficiency_elementary_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_elementary_schools_small_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_elementary_schools_small_district_size_only_df['Status'] = status
+
+ela_proficiency_elementary_schools_small_district_size_only_df.\
+    to_excel('ela_proficiency_elementary_schools_small_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_high_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_high_schools_large_district_size_only_df['Status'] = status
+
+ela_proficiency_high_schools_large_district_size_only_df.\
+    to_excel('ela_proficiency_high_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_high_schools_medium_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_high_schools_medium_district_size_only_df['Status'] = status
+
+ela_proficiency_high_schools_medium_district_size_only_df.\
+    to_excel('ela_proficiency_high_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_high_schools_small_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_high_schools_small_district_size_only_df['Status'] = status
+
+ela_proficiency_high_schools_small_district_size_only_df.\
+    to_excel('ela_proficiency_high_schools_small_district_size_only.xlsx', index=False)
+
 
 
 
