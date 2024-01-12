@@ -443,7 +443,7 @@ isa_condensed_white_students_data_df = isa_condensed_white_students_data_df.\
 
 isa_condensed_white_students_data_df.to_excel('isa_condensed_white_students_data.xlsx', index=False)
 # add percentage column to dataframe - IN PROGRESS
-isa_condensed_white_students_data_df['White Students Percentage'] = \
+isa_condensed_white_students_data_df['White Students %'] = \
     isa_condensed_white_students_data_df['# ISA Proficiency - White'] / \
     isa_condensed_white_students_data_df['# ISA Proficiency Total Student']
 isa_condensed_white_students_data_df['White Students %'] = \
