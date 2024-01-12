@@ -531,6 +531,8 @@ isa_condensed_asian_students_data_df = grab_isa_asian_students_data(isa_condense
 # create updated version of isa condensed asian students data
 isa_condensed_asian_students_data_df.to_excel('isa_condensed_asian_students_data.xlsx', index=False)
 
+# add percentage column to dataframe
+
 # if the # isa proficiency values of hawaiian and other pacific islander students is blank, remove row
 def grab_isa_pacific_islander_students_data(df): # find all the non-missing values ONLY
     try:
