@@ -1266,14 +1266,14 @@ ela_proficiency_preschools_small_district_size_only_df.\
 # *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
 status = []
 
-for value in ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
+for grade in ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
     try:
-        if value < 20:
-            ela_proficiency_status.append('Not Acceptable')
+        if grade < 20:
+            status.append('Not Acceptable')
     except:
-            ela_proficiency_status.append('Acceptable')
+            status.append('Acceptable')
 
-ela_proficiency_charter_schools_large_district_size_only_df['ELA Proficiency Status'] = ela_proficiency_status
+ela_proficiency_charter_schools_large_district_size_only_df['Status'] = status
 
 ela_proficiency_charter_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_large_district_size_only_df.xlsx', index=False)
