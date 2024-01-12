@@ -1264,6 +1264,7 @@ ela_proficiency_preschools_small_district_size_only_df.\
 
 
 # *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
+# charter schools, elementary schools, high schools, middle schools
 status = []
 
 for student in ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
@@ -1277,10 +1278,29 @@ for student in ela_proficiency_charter_schools_large_district_size_only_df['# EL
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_charter_schools_large_district_size_only_df['Status'] = status
+ela_proficiency_charter_schools_large_district_size_only_df.loc['Status'] = status
 
 ela_proficiency_charter_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_charter_schools_medium_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_charter_schools_medium_district_size_only_df.loc['Status'] = status
+
+ela_proficiency_charter_schools_medium_district_size_only_df.\
+    to_excel('ela_proficiency_charter_schools_medium_district_size_only.xlsx', index=False)
+
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
