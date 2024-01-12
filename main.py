@@ -1430,8 +1430,59 @@ ela_proficiency_high_schools_small_district_size_only_df['Status'] = status
 ela_proficiency_high_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_high_schools_small_district_size_only.xlsx', index=False)
 
+status = []
 
+for student in ela_proficiency_middle_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
 
+ela_proficiency_middle_schools_large_district_size_only_df['Status'] = status
+
+ela_proficiency_middle_schools_large_district_size_only_df.\
+    to_excel('ela_proficiency_middle_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_middle_schools_medium_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_middle_schools_medium_district_size_only_df['Status'] = status
+
+ela_proficiency_middle_schools_medium_district_size_only_df.\
+    to_excel('ela_proficiency_middle_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in ela_proficiency_middle_schools_small_district_size_only_df['# ELA Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+ela_proficiency_middle_schools_small_district_size_only_df['Status'] = status
+
+ela_proficiency_middle_schools_small_district_size_only_df.\
+    to_excel('ela_proficiency_middle_schools_small_district_size_only.xlsx', index=False)
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
@@ -1662,6 +1713,221 @@ math_proficiency_preschools_small_district_size_only_df.\
 
 
 # *FOR LOOP TO BE USED TO APPEND STATUS COLUMNS TO SHEETS* REF TO LINE 1153
+status = []
+
+for student in math_proficiency_charter_schools_large_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_charter_schools_large_district_size_only_df['Status'] = status
+
+math_proficiency_charter_schools_large_district_size_only_df.\
+    to_excel('math_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_charter_schools_medium_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_charter_schools_medium_district_size_only_df['Status'] = status
+
+math_proficiency_charter_schools_medium_district_size_only_df.\
+    to_excel('math_proficiency_charter_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_charter_schools_small_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_charter_schools_small_district_size_only_df['Status'] = status
+
+math_proficiency_charter_schools_small_district_size_only_df.\
+    to_excel('math_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_elementary_schools_large_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_elementary_schools_large_district_size_only_df['Status'] = status
+
+math_proficiency_elementary_schools_large_district_size_only_df.\
+    to_excel('math_proficiency_elementary_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_elementary_schools_medium_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_elementary_schools_medium_district_size_only_df['Status'] = status
+
+math_proficiency_elementary_schools_medium_district_size_only_df.\
+    to_excel('math_proficiency_elementary_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_elementary_schools_small_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_elementary_schools_small_district_size_only_df['Status'] = status
+
+math_proficiency_elementary_schools_small_district_size_only_df.\
+    to_excel('math_proficiency_elementary_schools_small_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_high_schools_large_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_high_schools_large_district_size_only_df['Status'] = status
+
+math_proficiency_high_schools_large_district_size_only_df.\
+    to_excel('math_proficiency_high_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_high_schools_medium_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_high_schools_medium_district_size_only_df['Status'] = status
+
+math_proficiency_high_schools_medium_district_size_only_df.\
+    to_excel('math_proficiency_high_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_high_schools_small_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_high_schools_small_district_size_only_df['Status'] = status
+
+math_proficiency_high_schools_small_district_size_only_df.\
+    to_excel('math_proficiency_high_schools_small_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_middle_schools_large_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_middle_schools_large_district_size_only_df['Status'] = status
+
+math_proficiency_middle_schools_large_district_size_only_df.\
+    to_excel('math_proficiency_middle_schools_large_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_middle_schools_medium_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 15:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 14:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_middle_schools_medium_district_size_only_df['Status'] = status
+
+math_proficiency_middle_schools_medium_district_size_only_df.\
+    to_excel('math_proficiency_middle_schools_medium_district_size_only.xlsx', index=False)
+
+status = []
+
+for student in math_proficiency_middle_schools_small_district_size_only_df['# Math Proficiency Total Student']:
+    try:
+        if student >= 10:
+            status.append('Up to Standard')
+        elif student >= 5 and student <= 9:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
+    except:
+        status.append('Not an appropriate value')
+
+math_proficiency_middle_schools_small_district_size_only_df['Status'] = status
+
+math_proficiency_middle_schools_small_district_size_only_df.\
+    to_excel('math_proficiency_middle_schools_small_district_size_only.xlsx', index=False)
 
 
 # add status column to math_proficiency_preschools_only_df and set all values to = 'N/A'
