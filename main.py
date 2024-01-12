@@ -443,6 +443,11 @@ isa_condensed_black_students_data_df = grab_isa_black_students_data(isa_condense
 
 # create updated version of isa condensed black students data
 isa_condensed_black_students_data_df.to_excel('isa_condensed_black_students_data.xlsx', index=False)
+# drop # isa columns that are not relative to black students in the dataframe
+isa_condensed_black_students_data_df = isa_condensed_black_students_data_df.\
+    drop(['# ISA Proficiency - White'], axis=1)
+
+isa_condensed_black_students_data_df.to_excel('isa_condensed_black_students_data.xlsx', index=False)
 
 # if the # isa proficiency values of hispanic students is blank, remove row
 def grab_isa_hispanic_students_data(df): # find all the non-missing values ONLY
