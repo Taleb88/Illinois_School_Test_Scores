@@ -1268,15 +1268,19 @@ status = []
 
 for student in ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Total Student']:
     try:
-        if student < 20:
-            status.append('Not Acceptable')
+        if student >= 20:
+            status.append('Up to Standard')
+        elif student >= 10 and student <= 19:
+            status.append('Moderate')
+        else:
+            status.append('Alarming')
     except:
-            status.append('Acceptable')
+        status.append('Not an appropriate value')
 
 ela_proficiency_charter_schools_large_district_size_only_df['Status'] = status
 
 ela_proficiency_charter_schools_large_district_size_only_df.\
-    to_excel('ela_proficiency_charter_schools_large_district_size_only_df.xlsx', index=False)
+    to_excel('ela_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
 ela_proficiency_preschools_only_df['Status'] =\
