@@ -447,10 +447,33 @@ isa_condensed_white_students_data_df['White Students %'] = \
     isa_condensed_white_students_data_df['# ISA Proficiency - White'] / \
     isa_condensed_white_students_data_df['# ISA Proficiency Total Student']
 isa_condensed_white_students_data_df['White Students %'] = \
-    isa_condensed_white_students_data_df['White Students %'].astype(str).str[2:4] + '%'
+    isa_condensed_white_students_data_df['White Students %'] + 00 # in case a value should = 100%
+#isa_condensed_white_students_data_df['White Students %'] = \
+    #isa_condensed_white_students_data_df['White Students %'].astype(str).str[2:4] + '%'
 
 isa_condensed_white_students_data_df.to_excel('isa_condensed_white_students_data.xlsx', index=False)
+'''
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '9%', 'White Students %'] = '90%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '8%', 'White Students %'] = '80%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '7%', 'White Students %'] = '70%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '6%', 'White Students %'] = '60%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '5%', 'White Students %'] = '50%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '4%', 'White Students %'] = '40%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '3%', 'White Students %'] = '30%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '2%', 'White Students %'] = '20%'
+isa_condensed_white_students_data_df.loc[
+    isa_condensed_white_students_data_df['White Students %'] == '1%', 'White Students %'] = '10%'
 
+isa_condensed_white_students_data_df.to_excel('isa_condensed_white_students_data.xlsx', index=False)
+'''
 # if the # isa proficiency values of black students is blank, remove row
 def grab_isa_black_students_data(df): # find all the non-missing values ONLY
     try:
