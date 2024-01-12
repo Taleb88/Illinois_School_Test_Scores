@@ -477,7 +477,7 @@ isa_condensed_black_students_data_df.to_excel('isa_condensed_black_students_data
 
 # add percentage column to dataframe
 isa_condensed_black_students_data_df['Black or African American Students %'] =\
-    isa_condensed_black_students_data_df['# ISA Proficiency - Black or African America'] / \
+    isa_condensed_black_students_data_df['# ISA Proficiency - Black or African American'] / \
     isa_condensed_black_students_data_df['# ISA Proficiency Total Student']
 
 isa_condensed_black_students_data_df.to_excel('isa_condensed_black_students_data.xlsx', index=False)
@@ -509,6 +509,13 @@ isa_condensed_hispanic_students_data_df = isa_condensed_hispanic_students_data_d
 
 isa_condensed_hispanic_students_data_df.to_excel('isa_condensed_hispanic_students_data.xlsx',
                                                  index=False)
+
+# add percentage column to dataframe
+isa_condensed_black_students_data_df['Hispanic Students %'] =\
+    isa_condensed_black_students_data_df['# ISA Proficiency - Hispanic or Latino'] / \
+    isa_condensed_black_students_data_df['# ISA Proficiency Total Student']
+
+isa_condensed_black_students_data_df.to_excel('isa_condensed_black_students_data.xlsx', index=False)
 
 # if the # isa proficiency values of asian students is blank, remove row
 def grab_isa_asian_students_data(df): # find all the non-missing values ONLY
