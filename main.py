@@ -443,7 +443,6 @@ isa_condensed_white_students_data_df = isa_condensed_white_students_data_df.\
 
 isa_condensed_white_students_data_df.to_excel('isa_condensed_white_students_data.xlsx', index=False)
 
-
 # if the # isa proficiency values of black students is blank, remove row
 def grab_isa_black_students_data(df): # find all the non-missing values ONLY
     try:
