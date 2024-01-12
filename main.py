@@ -1297,8 +1297,8 @@ for student in ela_proficiency_charter_schools_medium_district_size_only_df['# E
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_charter_schools_large_district_size_only_df['Status'] = None
-ela_proficiency_charter_schools_large_district_size_only_df.loc[0, 'Status'] = status
+ela_proficiency_charter_schools_medium_district_size_only_df['Status'] = None
+ela_proficiency_charter_schools_medium_district_size_only_df.loc[0, 'Status'] = status
 
 ela_proficiency_charter_schools_medium_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_medium_district_size_only.xlsx', index=False)
