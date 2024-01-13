@@ -531,7 +531,26 @@ isa_condensed_asian_students_data_df = grab_isa_asian_students_data(isa_condense
 # create updated version of isa condensed asian students data
 isa_condensed_asian_students_data_df.to_excel('isa_condensed_asian_students_data.xlsx', index=False)
 
+# drop # isa columns that are not relative to asian students in the dataframe
+isa_condensed_asian_students_data_df = isa_condensed_asian_students_data_df.\
+    drop(['# ISA Proficiency - White',
+          '# ISA Proficiency - Black or African American',
+          '# ISA Proficiency - Hispanic or Latino',
+          '# ISA Proficiency - Native Hawaiian or Other Pacific Islander',
+          '# ISA Proficiency - American Indian or Alaska Native',
+          '# ISA Proficiency - Two or More Races',
+          '# ISA Proficiency - Children with Disabilities'],
+         axis=1)
+
+isa_condensed_asian_students_data_df.to_excel('isa_condensed_asian_students_data.xlsx',
+                                                 index=False)
+
 # add percentage column to dataframe
+isa_condensed_asian_students_data_df['Asian Students %'] =\
+    isa_condensed_asian_students_data_df['# ISA Proficiency - Asian'] / \
+    isa_condensed_asian_students_data_df['# ISA Proficiency Total Student']
+
+isa_condensed_asian_students_data_df.to_excel('isa_condensed_asian_students_data.xlsx', index=False)
 
 # if the # isa proficiency values of hawaiian and other pacific islander students is blank, remove row
 def grab_isa_pacific_islander_students_data(df): # find all the non-missing values ONLY
