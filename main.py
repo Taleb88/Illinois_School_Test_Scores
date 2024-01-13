@@ -858,8 +858,8 @@ plt.xlabel("Native Hawaiian or Other Pacific Islander Students Per School")
 plt.ylabel("# ISA Proficiency Total Student")
 plt.show()
 
-# creating a bar chart of isa proficiency pertaining to alaskan or american indian students per school
-file = pd.read_excel('isa_condensed_alaskan_or_american_indian_students_data.xlsx')
+# creating a bar chart of isa proficiency pertaining to american indian or alaska native students per school
+file = pd.read_excel('isa_condensed_american_indian_or_alaskan_native_students_data.xlsx')
 
 x_axis = file['# ISA Proficiency - American Indian or Alaska Native']
 y_axis = file['# ISA Proficiency Total Student']
