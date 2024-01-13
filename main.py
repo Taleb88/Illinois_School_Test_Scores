@@ -1342,7 +1342,7 @@ for student in ela_proficiency_charter_schools_large_district_size_only_df['# EL
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_charter_schools_large_district_size_only_df['Status'] = status
+ela_proficiency_charter_schools_large_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_charter_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_large_district_size_only.xlsx', index=False)
@@ -1360,7 +1360,7 @@ for student in ela_proficiency_charter_schools_medium_district_size_only_df['# E
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_charter_schools_medium_district_size_only_df['Status'] = status
+ela_proficiency_charter_schools_medium_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_charter_schools_medium_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_medium_district_size_only.xlsx', index=False)
@@ -1378,7 +1378,7 @@ for student in ela_proficiency_charter_schools_small_district_size_only_df['# EL
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_charter_schools_small_district_size_only_df['Status'] = status
+ela_proficiency_charter_schools_small_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_charter_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_charter_schools_small_district_size_only.xlsx', index=False)
@@ -1396,7 +1396,7 @@ for student in ela_proficiency_elementary_schools_large_district_size_only_df['#
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_elementary_schools_large_district_size_only_df['Status'] = status
+ela_proficiency_elementary_schools_large_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_elementary_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_elementary_schools_large_district_size_only.xlsx', index=False)
@@ -1414,7 +1414,7 @@ for student in ela_proficiency_elementary_schools_medium_district_size_only_df['
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_elementary_schools_medium_district_size_only_df['Status'] = status
+ela_proficiency_elementary_schools_medium_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_elementary_schools_medium_district_size_only_df.\
     to_excel('ela_proficiency_elementary_schools_medium_district_size_only.xlsx', index=False)
@@ -1432,7 +1432,7 @@ for student in ela_proficiency_elementary_schools_small_district_size_only_df['#
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_elementary_schools_small_district_size_only_df['Status'] = status
+ela_proficiency_elementary_schools_small_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_elementary_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_elementary_schools_small_district_size_only.xlsx', index=False)
@@ -1450,7 +1450,7 @@ for student in ela_proficiency_high_schools_large_district_size_only_df['# ELA P
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_high_schools_large_district_size_only_df['Status'] = status
+ela_proficiency_high_schools_large_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_high_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_high_schools_large_district_size_only.xlsx', index=False)
@@ -1468,7 +1468,7 @@ for student in ela_proficiency_high_schools_medium_district_size_only_df['# ELA 
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_high_schools_medium_district_size_only_df['Status'] = status
+ela_proficiency_high_schools_medium_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_high_schools_medium_district_size_only_df.\
     to_excel('ela_proficiency_high_schools_medium_district_size_only.xlsx', index=False)
@@ -1486,7 +1486,7 @@ for student in ela_proficiency_high_schools_small_district_size_only_df['# ELA P
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_high_schools_small_district_size_only_df['Status'] = status
+ela_proficiency_high_schools_small_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_high_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_high_schools_small_district_size_only.xlsx', index=False)
@@ -1504,7 +1504,7 @@ for student in ela_proficiency_middle_schools_large_district_size_only_df['# ELA
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_middle_schools_large_district_size_only_df['Status'] = status
+ela_proficiency_middle_schools_large_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_middle_schools_large_district_size_only_df.\
     to_excel('ela_proficiency_middle_schools_large_district_size_only.xlsx', index=False)
@@ -1522,7 +1522,7 @@ for student in ela_proficiency_middle_schools_medium_district_size_only_df['# EL
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_middle_schools_medium_district_size_only_df['Status'] = status
+ela_proficiency_middle_schools_medium_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_middle_schools_medium_district_size_only_df.\
     to_excel('ela_proficiency_middle_schools_medium_district_size_only.xlsx', index=False)
@@ -1540,13 +1540,13 @@ for student in ela_proficiency_middle_schools_small_district_size_only_df['# ELA
     except:
         status.append('Not an appropriate value')
 
-ela_proficiency_middle_schools_small_district_size_only_df['Status'] = status
+ela_proficiency_middle_schools_small_district_size_only_df['# ELA Proficiency Status'] = status
 
 ela_proficiency_middle_schools_small_district_size_only_df.\
     to_excel('ela_proficiency_middle_schools_small_district_size_only.xlsx', index=False)
 
 # add status column to ela_proficiency_preschools_only_df and set all values to = 'N/A'
-ela_proficiency_preschools_only_df['Status'] =\
+ela_proficiency_preschools_only_df['# ELA Proficiency Status'] =\
     ['N/A'] * len(ela_proficiency_preschools_only_df)
 
 ela_proficiency_preschools_only_df.\
