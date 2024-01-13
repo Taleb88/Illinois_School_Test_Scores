@@ -619,15 +619,15 @@ isa_condensed_american_indian_or_alaskan_native_students_data_df = \
          axis=1)
 
 isa_condensed_american_indian_or_alaskan_native_students_data_df.\
-    to_excel('isa_condensed_pacific_islander_students_data.xlsx', index=False)
+    to_excel('isa_condensed_american_indian_or_alaskan_native_students_data.xlsx', index=False)
 
 # add percentage column to dataframe
 isa_condensed_american_indian_or_alaskan_native_students_data_df['American Indian or Alaska Native Students %'] =\
     isa_condensed_american_indian_or_alaskan_native_students_data_df['# ISA Proficiency - American Indian or Alaska Native'] / \
     isa_condensed_american_indian_or_alaskan_native_students_data_df['# ISA Proficiency Total Student']
 
-isa_condensed_american_indian_or_alaskan_native_students_data_df.to_excel('isa_condensed_pacific_islander_students_data.xlsx',
-                                                         index=False)
+isa_condensed_american_indian_or_alaskan_native_students_data_df.\
+    to_excel('isa_condensed_american_indian_or_alaskan_native_students_data.xlsx',index=False)
 
 # if the # isa proficiency values of multiracial students is blank, remove row
 def grab_isa_multiracial_students_data(df): # find all the non-missing values ONLY
