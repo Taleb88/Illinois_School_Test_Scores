@@ -588,7 +588,7 @@ isa_condensed_pacific_islander_students_data_df['Native Hawaiian or Other Pacifi
     isa_condensed_pacific_islander_students_data_df['# ISA Proficiency Total Student']
 
 isa_condensed_pacific_islander_students_data_df.to_excel('isa_condensed_pacific_islander_students_data.xlsx',
-                                                         index=False) # results are correct since there are 0 students
+                                                         index=False)
 
 # if the # isa proficiency values of alaskan or american indian students is blank, remove row
 def grab_isa_american_indian_or_alaskan_native_students_data(df): # find all the non-missing values ONLY
@@ -605,6 +605,30 @@ isa_condensed_american_indian_or_alaskan_native_students_data_df = \
 # create updated version of isa condensed alaskan or american indian students data
 isa_condensed_american_indian_or_alaskan_native_students_data_df.to_excel\
     ('isa_condensed_alaskan_or_american_indian_students_data.xlsx', index=False)
+
+# drop # isa columns that are not relative to hawaiian and other pacific islander students in the dataframe
+isa_condensed_american_indian_or_alaskan_native_students_data_df = \
+    isa_condensed_american_indian_or_alaskan_native_students_data_df.\
+    drop(['# ISA Proficiency - White',
+          '# ISA Proficiency - Black or African American',
+          '# ISA Proficiency - Hispanic or Latino',
+          '# ISA Proficiency - Asian',
+          '# ISA Proficiency - Native Hawaiian or Other Pacific Islander',
+          '# ISA Proficiency - Two or More Races',
+          '# ISA Proficiency - Children with Disabilities'],
+         axis=1)
+
+isa_condensed_alaskan_or_american_indian_students_data_df.\
+    to_excel('isa_condensed_alaskan_or_american_indian_students_data.xlsx',index=False)
+
+# add percentage column to dataframe
+isa_condensed_alaskan_or_american_indian_data_df['Native Hawaiian or Other Pacific Islander Students %'] =\
+    isa_condensed_alaskan_or_american_indian_data_df['# ISA Proficiency - American Native or Alaskan Native'] / \
+    isa_condensed_alaskan_or_american_indian_students_data_df['# ISA Proficiency Total Student']
+
+isa_condensed_alaskan_or_american_indian_students_data_df.\
+    to_excel('isa_condensed_alaskan_or_american_indian_students_data.xlsx',index=False)
+
 
 # if the # isa proficiency values of multiracial students is blank, remove row
 def grab_isa_multiracial_students_data(df): # find all the non-missing values ONLY
