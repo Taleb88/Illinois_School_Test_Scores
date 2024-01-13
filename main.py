@@ -645,6 +645,29 @@ isa_condensed_isa_multiracial_students_data_df = \
 isa_condensed_isa_multiracial_students_data_df.to_excel\
     ('isa_condensed_multiracial_students_data.xlsx', index=False)
 
+# drop # isa columns that are not relative to multiracial students in the dataframe
+isa_condensed_isa_multiracial_students_data_df = \
+    isa_condensed_isa_multiracial_students_data_df.\
+    drop(['# ISA Proficiency - White',
+          '# ISA Proficiency - Black or African American',
+          '# ISA Proficiency - Hispanic or Latino',
+          '# ISA Proficiency - Asian',
+          '# ISA Proficiency - Native Hawaiian or Other Pacific Islander',
+          '# ISA Proficiency - American Indian or Alaska Native',
+          '# ISA Proficiency - Children with Disabilities'],
+         axis=1)
+
+isa_condensed_isa_multiracial_students_data_df.\
+    to_excel('isa_condensed_multiracial_students_data.xlsx', index=False)
+
+# add percentage column to dataframe
+isa_condensed_isa_multiracial_students_data_df['Two or More Races (Multiracial) Students %'] =\
+    isa_condensed_isa_multiracial_students_data_df['# ISA Proficiency - Two or More Races'] / \
+    isa_condensed_isa_multiracial_students_data_df['# ISA Proficiency Total Student']
+
+isa_condensed_isa_multiracial_students_data_df.\
+to_excel('isa_condensed_multiracial_students_data.xlsx',index=False)
+
 # if the # isa proficiency values of children with disabilities students is blank, remove row
 def grab_isa_children_with_disabilities_data(df): # find all the non-missing values ONLY
     try:
