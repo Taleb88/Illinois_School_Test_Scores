@@ -596,7 +596,8 @@ def grab_isa_american_indian_or_alaska_native_students_data(df): # find all the 
         return df[df['# ISA Proficiency - American Indian or Alaska Native'].notna()]
     except Exception as e:
         print(f'caught {type(e)}: e \n '
-              f'Cannot delete rows with missing data within grab_isa_american_indian_or_alaska_native_students_data()')
+              f'Cannot delete rows with missing data within '
+              f'grab_isa_american_indian_or_alaska_native_students_data()')
 
 # delete rows with empty cell under proficiency columns in grab_isa_american_indian_or_alaska_native_students_data()
 isa_condensed_american_indian_or_alaska_native_students_data_df = \
