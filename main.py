@@ -741,7 +741,7 @@ isa_condensed_hispanic_students_pivot_table = pd.pivot_table(
 )
 
 # isa hispanic students pivot table
-isa_condensed_hispanic_students_pivot_table_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
+isa_condensed_hispanic_students_pivot_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
 
 # isa asian students pivot table
 isa_condensed_asian_students_pivot_table = pd.pivot_table(
