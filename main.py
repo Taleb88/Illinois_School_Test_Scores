@@ -708,7 +708,7 @@ isa_condensed_children_with_disabilities_data_df.\
 to_excel('isa_condensed_children_with_disabilities_data.xlsx',index=False)
 
 # isa white students pivot table
-isa_condensed_white_students_table = pd.pivot_table(
+isa_condensed_white_students_pivot_table = pd.pivot_table(
     isa_condensed_white_students_data_df,
     index='City',
     columns='County',
@@ -717,10 +717,10 @@ isa_condensed_white_students_table = pd.pivot_table(
 )
 
 # isa white students pivot table
-isa_condensed_white_students_table.to_excel('isa_condensed_white_student_num_pivot_table.xlsx')
+isa_condensed_white_students_pivot_table.to_excel('isa_condensed_white_student_num_pivot_table.xlsx')
 
 # isa black students pivot table
-isa_condensed_black_students_table = pd.pivot_table(
+isa_condensed_black_students_pivot_table = pd.pivot_table(
     isa_condensed_black_students_data_df,
     index='City',
     columns='County',
@@ -729,10 +729,10 @@ isa_condensed_black_students_table = pd.pivot_table(
 )
 
 # isa black students pivot table
-isa_condensed_black_students_table.to_excel('isa_condensed_black_student_num_pivot_table.xlsx')
+isa_condensed_black_students_pivot_table.to_excel('isa_condensed_black_student_num_pivot_table.xlsx')
 
 # isa hispanic students pivot table
-isa_condensed_hispanic_students_table = pd.pivot_table(
+isa_condensed_hispanic_students_pivot_table = pd.pivot_table(
     isa_condensed_hispanic_students_data_df,
     index='City',
     columns='County',
@@ -741,10 +741,10 @@ isa_condensed_hispanic_students_table = pd.pivot_table(
 )
 
 # isa hispanic students pivot table
-isa_condensed_hispanic_students_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
+isa_condensed_hispanic_students_pivot_table_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
 
 # isa asian students pivot table
-isa_condensed_asian_students_table = pd.pivot_table(
+isa_condensed_asian_students_pivot_table = pd.pivot_table(
     isa_condensed_asian_students_data_df,
     index='City',
     columns='County',
@@ -753,10 +753,10 @@ isa_condensed_asian_students_table = pd.pivot_table(
 )
 
 # isa asian students pivot table
-isa_condensed_asian_students_table.to_excel('isa_condensed_asian_student_num_pivot_table.xlsx')
+isa_condensed_asian_students_pivot_table.to_excel('isa_condensed_asian_student_num_pivot_table.xlsx')
 
 # isa pacific islander students pivot table
-isa_condensed_pacific_islander_students_table = pd.pivot_table(
+isa_condensed_pacific_islander_students_pivot_table = pd.pivot_table(
     isa_condensed_pacific_islander_students_data_df,
     index='City',
     columns='County',
@@ -765,11 +765,11 @@ isa_condensed_pacific_islander_students_table = pd.pivot_table(
 )
 
 # isa pacific islander students pivot table
-isa_condensed_pacific_islander_students_table.\
+isa_condensed_pacific_islander_students_pivot_table.\
     to_excel('isa_condensed_pacific_islander_student_num_pivot_table.xlsx')
 
 # isa american indian or alaska native students pivot table
-isa_condensed_american_indian_or_alaska_native_students_table = pd.pivot_table(
+isa_condensed_american_indian_or_alaska_native_students_pivot_table = pd.pivot_table(
     isa_condensed_american_indian_or_alaska_native_students_data_df,
     index='City',
     columns='County',
@@ -778,11 +778,11 @@ isa_condensed_american_indian_or_alaska_native_students_table = pd.pivot_table(
 )
 
 # isa american indian or alaska native students pivot table
-isa_condensed_american_indian_or_alaska_native_students_table\
+isa_condensed_american_indian_or_alaska_native_students_pivot_table\
     .to_excel('isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx')
 
 # isa multiracial students pivot table
-isa_condensed_multiracial_students_table = pd.pivot_table(
+isa_condensed_multiracial_students_pivot_table= pd.pivot_table(
     isa_condensed_isa_multiracial_students_data_df,
     index='City',
     columns='County',
@@ -791,11 +791,11 @@ isa_condensed_multiracial_students_table = pd.pivot_table(
 )
 
 # isa multiracial students pivot table
-isa_condensed_multiracial_students_table\
+isa_condensed_multiracial_students_pivot_table\
     .to_excel('isa_condensed_multiracial_student_num_pivot_table.xlsx')
 
 # isa children with disabilities pivot table
-isa_condensed_children_with_disabilities_table = pd.pivot_table(
+isa_condensed_children_with_disabilities_pivot_table = pd.pivot_table(
     isa_condensed_children_with_disabilities_data_df,
     index='City',
     columns='County',
@@ -804,14 +804,14 @@ isa_condensed_children_with_disabilities_table = pd.pivot_table(
 )
 
 # children with disabilities pivot table
-isa_condensed_children_with_disabilities_table\
+isa_condensed_children_with_disabilities_pivot_table\
     .to_excel('isa_condensed_children_with_disabilities_num_pivot_table.xlsx')
 
 # concat isa white and black student pivot tables via keys
 isa_pivot_table_white_and_black_student_frames = \
     [
-        isa_condensed_white_students_table,
-        isa_condensed_black_students_table
+        isa_condensed_white_students_pivot_table,
+        isa_condensed_black_students_pivot_table
     ]
 
 isa_pivot_table_white_and_black_student_concat = pd.concat(
@@ -825,13 +825,13 @@ isa_pivot_table_white_and_black_student_concat.\
 # concat all isa students (race only) pivot tables via keys
 isa_pivot_table_all_races_frames = \
     [
-        isa_condensed_white_students_table,
-        isa_condensed_black_students_table,
-        isa_condensed_hispanic_students_table,
-        isa_condensed_asian_students_table,
-        isa_condensed_pacific_islander_students_table,
-        isa_condensed_american_indian_or_alaska_native_students_table,
-        isa_condensed_multiracial_students_table,
+        isa_condensed_white_students_pivot_table,
+        isa_condensed_black_students_pivot_table,
+        isa_condensed_hispanic_students_pivot_table,
+        isa_condensed_asian_students_pivot_table,
+        isa_condensed_pacific_islander_students_pivot_table,
+        isa_condensed_american_indian_or_alaska_native_students_pivot_table,
+        isa_condensed_multiracial_students_pivot_table,
     ]
 
 isa_pivot_table_all_races_concat = pd.concat(
