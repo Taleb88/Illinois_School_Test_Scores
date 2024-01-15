@@ -771,6 +771,31 @@ isa_condensed_hispanic_students_pivot_table = pd.pivot_table(
 # isa hispanic students pivot table
 isa_condensed_hispanic_students_pivot_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
 
+# isa hispanic students pivot table
+isa_condensed_hispanic_students_pivot_table = pd.pivot_table(
+    isa_condensed_hispanic_students_data_df,
+    index='City',
+    columns='County',
+    values='# ISA Proficiency - Hispanic or Latino',
+    aggfunc='sum'
+)
+
+# isa hispanic students pivot table
+isa_condensed_hispanic_students_pivot_table.to_excel('isa_condensed_hispanic_student_num_pivot_table.xlsx')
+
+# isa hispanic students percentage pivot table
+isa_condensed_hispanic_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_hispanic_students_data_df,
+    index='School Name',
+    columns='City',
+    values='Hispanic Students %',
+    aggfunc='sum'
+)
+
+# isa hispanic students percentage pivot table
+isa_condensed_hispanic_students_school_percentage_pivot_table.\
+    to_excel('isa_condensed_hispanic_student_school_percentage_num_pivot_table.xlsx')
+
 # isa asian students pivot table
 isa_condensed_asian_students_pivot_table = pd.pivot_table(
     isa_condensed_asian_students_data_df,
