@@ -860,7 +860,7 @@ isa_condensed_american_indian_or_alaska_native_students_pivot_table = pd.pivot_t
 isa_condensed_american_indian_or_alaska_native_students_pivot_table\
     .to_excel('isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx')
 
-# isa american indian or alaska native students pivot table
+# isa american indian or alaska native students percentage pivot table
 isa_condensed_american_indian_or_alaska_native_students_school_percentage_pivot_table = pd.pivot_table(
     isa_condensed_american_indian_or_alaska_native_students_data_df,
     index='School Name',
@@ -869,7 +869,7 @@ isa_condensed_american_indian_or_alaska_native_students_school_percentage_pivot_
     aggfunc='sum'
 )
 
-# isa american indian or alaska native students pivot table
+# isa american indian or alaska native students percentage pivot table
 isa_condensed_american_indian_or_alaska_native_students_school_percentage_pivot_table.\
     to_excel('isa_condensed_american_indian_or_alaska_native_student_school_percentage_num_pivot_table.xlsx')
 
@@ -887,7 +887,7 @@ isa_condensed_multiracial_students_pivot_table= pd.pivot_table(
 isa_condensed_multiracial_students_pivot_table\
     .to_excel('isa_condensed_multiracial_student_num_pivot_table.xlsx')
 
-# isa multiracial students pivot table
+# isa multiracial students percentage pivot table
 isa_condensed_multiracial_students_school_percentage_pivot_table = pd.pivot_table(
     isa_condensed_multiracial_students_data_df,
     index='School Name',
@@ -896,7 +896,7 @@ isa_condensed_multiracial_students_school_percentage_pivot_table = pd.pivot_tabl
     aggfunc='sum'
 )
 
-# isa multiracial students pivot table
+# isa multiracial students percentage pivot table
 isa_condensed_multiracial_students_school_percentage_pivot_table.\
     to_excel('isa_condensed_multiracial_student_school_percentage_num_pivot_table.xlsx')
 
@@ -912,6 +912,19 @@ isa_condensed_children_with_disabilities_pivot_table = pd.pivot_table(
 # children with disabilities pivot table
 isa_condensed_children_with_disabilities_pivot_table\
     .to_excel('isa_condensed_children_with_disabilities_num_pivot_table.xlsx')
+
+# isa students children with disabilities percentage pivot table
+isa_condensed_children_with_disabilities_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_children_with_disabilities_data_df,
+    index='School Name',
+    columns='City',
+    values='Children with Disabilities Students %',
+    aggfunc='sum'
+)
+
+# isa students with disabilities percentage pivot table
+isa_condensed_children_with_disabilities_school_percentage_pivot_table.\
+    to_excel('isa_condensed_children_with_disabilities_percentage_num_pivot_table.xlsx')
 
 # concat isa white and black student pivot tables via keys
 isa_pivot_table_white_and_black_student_frames = \
