@@ -808,6 +808,19 @@ isa_condensed_asian_students_pivot_table = pd.pivot_table(
 # isa asian students pivot table
 isa_condensed_asian_students_pivot_table.to_excel('isa_condensed_asian_student_num_pivot_table.xlsx')
 
+# isa asian students percentage pivot table
+isa_condensed_asian_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_asian_students_data_df,
+    index='School Name',
+    columns='City',
+    values='Asian Students %',
+    aggfunc='sum'
+)
+
+# isa asian students percentage pivot table
+isa_condensed_asian_students_school_percentage_pivot_table.\
+    to_excel('isa_condensed_asian_student_school_percentage_num_pivot_table.xlsx')
+
 # isa pacific islander students pivot table
 isa_condensed_pacific_islander_students_pivot_table = pd.pivot_table(
     isa_condensed_pacific_islander_students_data_df,
