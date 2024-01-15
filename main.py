@@ -696,7 +696,7 @@ isa_condensed_children_with_disabilities_data_df = \
           '# ISA Proficiency - Two or More Races'],
          axis=1)
 
-isa_condensedchildren_with_disabilities_data_df.\
+isa_condensed_children_with_disabilities_data_df.\
     to_excel('isa_condensed_children_with_disabilities_data.xlsx', index=False)
 
 # add percentage column to dataframe
