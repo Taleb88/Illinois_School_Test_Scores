@@ -1906,7 +1906,7 @@ math_proficiency_middle_schools_only_df.\
 math_proficiency_preschools_only_df.\
     to_excel('math_proficiency_preschools_only.xlsx', index=False) # all # math proficiency values expected to be 0
 
-# *TO BE DEVELOPED* - IN PROGRESS
+# *TO BE DEVELOPED*
 # 1. create sheets per district size -> small, medium, large (create functions for each district size)
 # 2. for loop to create extra status column (exclude preschools) for each district doc (ELA/MATH/SCIENCE)
 #charter schools
@@ -2353,7 +2353,7 @@ science_proficiency_middle_schools_only_df.\
 science_proficiency_preschools_only_df.\
     to_excel('science_proficiency_preschools_only.xlsx', index=False) # all # sci proficiency values expected to = 0
 
-# *TO BE DEVELOPED* - IN PROGRESS
+# *TO BE DEVELOPED*
 # 1. create sheets per district size -> small, medium, large (create functions for each district size)
 # 2. for loop to create extra status column (exclude preschools) for each district doc (ELA/MATH/SCIENCE)
 
