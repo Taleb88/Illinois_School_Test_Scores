@@ -796,7 +796,7 @@ isa_condensed_multiracial_students_table\
 
 # isa children with disabilities pivot table
 isa_condensed_children_with_disabilities_table = pd.pivot_table(
-    isa_condensed_isa_children_with_disabilities_data_df,
+    isa_condensed_children_with_disabilities_data_df,
     index='City',
     columns='County',
     values='# ISA Proficiency - Children with Disabilities',
