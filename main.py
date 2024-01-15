@@ -839,7 +839,7 @@ isa_condensed_pacific_islander_students_school_percentage_pivot_table = pd.pivot
     isa_condensed_pacific_islander_students_data_df,
     index='School Name',
     columns='City',
-    values='Native Hawaiian or Other Pacific islander Students %',
+    values='Native Hawaiian or Other Pacific Islander Students %',
     aggfunc='sum'
 )
 
