@@ -834,6 +834,19 @@ isa_condensed_pacific_islander_students_pivot_table = pd.pivot_table(
 isa_condensed_pacific_islander_students_pivot_table.\
     to_excel('isa_condensed_pacific_islander_student_num_pivot_table.xlsx')
 
+# isa pacific islander students percentage pivot table
+isa_condensed_pacific_islander_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_pacific_islander_students_data_df,
+    index='School Name',
+    columns='City',
+    values='Native Hawaiian or Other Pacific islander Students %',
+    aggfunc='sum'
+)
+
+# isa pacific islander students percentage pivot table
+isa_condensed_pacific_islander_students_school_percentage_pivot_table.\
+    to_excel('isa_condensed_pacific_islander_student_school_percentage_num_pivot_table.xlsx')
+
 # isa american indian or alaska native students pivot table
 isa_condensed_american_indian_or_alaska_native_students_pivot_table = pd.pivot_table(
     isa_condensed_american_indian_or_alaska_native_students_data_df,
