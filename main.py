@@ -747,8 +747,8 @@ isa_condensed_black_students_pivot_table = pd.pivot_table(
 isa_condensed_black_students_pivot_table.to_excel('isa_condensed_black_student_num_pivot_table.xlsx')
 
 # isa black students percentage pivot table
-isa_condensed_white_students_school_percentage_pivot_table = pd.pivot_table(
-    isa_condensed_white_students_data_df,
+isa_condensed_black_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_black_students_data_df,
     index='School Name',
     columns='City',
     values='Black or African American Students %',
