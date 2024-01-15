@@ -639,16 +639,16 @@ def grab_isa_multiracial_students_data(df): # find all the non-missing values ON
               f'Cannot delete rows with missing data within grab_isa_multiracial_students_data()')
 
 # delete rows with empty cell under proficiency columns in grab_isa_multiracial_students_data()
-isa_condensed_isa_multiracial_students_data_df = \
+isa_condensed_multiracial_students_data_df = \
     grab_isa_multiracial_students_data(isa_condensed_gender_df)
 
 # create updated version of isa condensed multiracial students data
-isa_condensed_isa_multiracial_students_data_df.to_excel\
+isa_condensed_multiracial_students_data_df.to_excel\
     ('isa_condensed_multiracial_students_data.xlsx', index=False)
 
 # drop # isa columns that are not relative to multiracial students in the dataframe
-isa_condensed_isa_multiracial_students_data_df = \
-    isa_condensed_isa_multiracial_students_data_df.\
+isa_condensed_multiracial_students_data_df = \
+    isa_condensed_multiracial_students_data_df.\
     drop(['# ISA Proficiency - White',
           '# ISA Proficiency - Black or African American',
           '# ISA Proficiency - Hispanic or Latino',
@@ -658,15 +658,15 @@ isa_condensed_isa_multiracial_students_data_df = \
           '# ISA Proficiency - Children with Disabilities'],
          axis=1)
 
-isa_condensed_isa_multiracial_students_data_df.\
+isa_condensed_multiracial_students_data_df.\
     to_excel('isa_condensed_multiracial_students_data.xlsx', index=False)
 
 # add percentage column to dataframe
-isa_condensed_isa_multiracial_students_data_df['Two or More Races (Multiracial) Students %'] =\
-    isa_condensed_isa_multiracial_students_data_df['# ISA Proficiency - Two or More Races'] / \
-    isa_condensed_isa_multiracial_students_data_df['# ISA Proficiency Total Student']
+isa_condensed_multiracial_students_data_df['Two or More Races (Multiracial) Students %'] =\
+    isa_condensed_multiracial_students_data_df['# ISA Proficiency - Two or More Races'] / \
+    isa_condensed_multiracial_students_data_df['# ISA Proficiency Total Student']
 
-isa_condensed_isa_multiracial_students_data_df.\
+isa_condensed_multiracial_students_data_df.\
 to_excel('isa_condensed_multiracial_students_data.xlsx',index=False)
 
 # if the # isa proficiency values of children with disabilities students is blank, remove row
@@ -876,7 +876,7 @@ isa_condensed_american_indian_or_alaska_native_students_school_percentage_pivot_
 
 # isa multiracial students pivot table
 isa_condensed_multiracial_students_pivot_table= pd.pivot_table(
-    isa_condensed_isa_multiracial_students_data_df,
+    isa_condensed_multiracial_students_data_df,
     index='City',
     columns='County',
     values='# ISA Proficiency - Two or More Races',
@@ -892,7 +892,7 @@ isa_condensed_multiracial_students_school_percentage_pivot_table = pd.pivot_tabl
     isa_condensed_multiracial_students_data_df,
     index='School Name',
     columns='City',
-    values='Multiracial Students %',
+    values='Two or More Races (Multiracial) Students %',
     aggfunc='sum'
 )
 
