@@ -717,7 +717,21 @@ isa_condensed_white_students_pivot_table = pd.pivot_table(
 )
 
 # isa white students pivot table
-isa_condensed_white_students_pivot_table.to_excel('isa_condensed_white_student_num_pivot_table.xlsx')
+isa_condensed_white_students_pivot_table.\
+    to_excel('isa_condensed_white_student_num_pivot_table.xlsx')
+
+# isa white students percentage pivot table
+isa_condensed_white_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_white_students_data_df,
+    index='School Name',
+    columns='City',
+    values='White Students %',
+    aggfunc='sum'
+)
+
+# isa white students percentage pivot table
+isa_condensed_white_students_school_percentage_pivot_table.\
+    to_excel('isa_condensed_white_student_school_percentage_num_pivot_table.xlsx')
 
 # isa black students pivot table
 isa_condensed_black_students_pivot_table = pd.pivot_table(
@@ -730,6 +744,19 @@ isa_condensed_black_students_pivot_table = pd.pivot_table(
 
 # isa black students pivot table
 isa_condensed_black_students_pivot_table.to_excel('isa_condensed_black_student_num_pivot_table.xlsx')
+
+# isa black students percentage pivot table
+isa_condensed_white_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_white_students_data_df,
+    index='School Name',
+    columns='City',
+    values='Black or African American Students %',
+    aggfunc='sum'
+)
+
+# isa black students percentage pivot table
+isa_condensed_black_students_school_percentage_pivot_table.\
+    to_excel('isa_condensed_black_student_school_percentage_num_pivot_table.xlsx')
 
 # isa hispanic students pivot table
 isa_condensed_hispanic_students_pivot_table = pd.pivot_table(
