@@ -860,6 +860,20 @@ isa_condensed_american_indian_or_alaska_native_students_pivot_table = pd.pivot_t
 isa_condensed_american_indian_or_alaska_native_students_pivot_table\
     .to_excel('isa_condensed_american_indian_or_alaska_native_student_num_pivot_table.xlsx')
 
+# isa american indian or alaska native students pivot table
+isa_condensed_american_indian_or_alaska_native_students_school_percentage_pivot_table = pd.pivot_table(
+    isa_condensed_american_indian_or_alaska_native_students_data_df,
+    index='School Name',
+    columns='City',
+    values='American Indian or Alaska Native Students %',
+    aggfunc='sum'
+)
+
+# isa american indian or alaska native students pivot table
+isa_condensed_american_indian_or_alaska_native_students_school_percentage_pivot_table.\
+    to_excel('isa_condensed_american_indian_or_alaska_native_student_school_percentage_num_pivot_table.xlsx')
+
+
 # isa multiracial students pivot table
 isa_condensed_multiracial_students_pivot_table= pd.pivot_table(
     isa_condensed_isa_multiracial_students_data_df,
