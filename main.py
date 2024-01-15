@@ -677,16 +677,16 @@ def grab_isa_children_with_disabilities_data(df): # find all the non-missing val
               f'Cannot delete rows with missing data within grab_isa_children_with_disabilities_data()')
 
 # delete rows with empty cell under proficiency columns in grab_isa_children_with_disabilities_data()
-isa_condensed_isa_children_with_disabilities_data_df = \
+isa_condensed_children_with_disabilities_data_df = \
     grab_isa_children_with_disabilities_data(isa_condensed_gender_df)
 
 # create updated version of isa condensed children with disabilities students data
-isa_condensed_isa_children_with_disabilities_data_df.to_excel\
+isa_condensed_children_with_disabilities_data_df.to_excel\
     ('isa_condensed_children_with_disabilities_data.xlsx', index=False)
 
 # drop # isa columns that are not relative to children with disabilities students in the dataframe
-isa_condensed_isa_children_with_disabilities_data_df = \
-    isa_condensed_isa_children_with_disabilities_data_df.\
+isa_condensed_children_with_disabilities_data_df = \
+    isa_condensed_children_with_disabilities_data_df.\
     drop(['# ISA Proficiency - White',
           '# ISA Proficiency - Black or African American',
           '# ISA Proficiency - Hispanic or Latino',
@@ -696,15 +696,15 @@ isa_condensed_isa_children_with_disabilities_data_df = \
           '# ISA Proficiency - Two or More Races'],
          axis=1)
 
-isa_condensed_isa_children_with_disabilities_data_df.\
+isa_condensedchildren_with_disabilities_data_df.\
     to_excel('isa_condensed_children_with_disabilities_data.xlsx', index=False)
 
 # add percentage column to dataframe
-isa_condensed_isa_children_with_disabilities_data_df['Children with Disabilities Students %'] =\
-    isa_condensed_isa_children_with_disabilities_data_df['# ISA Proficiency - Children with Disabilities'] / \
-    isa_condensed_isa_children_with_disabilities_data_df['# ISA Proficiency Total Student']
+isa_condensed_children_with_disabilities_data_df['Children with Disabilities Students %'] =\
+    isa_condensed_children_with_disabilities_data_df['# ISA Proficiency - Children with Disabilities'] / \
+    isa_condensed_children_with_disabilities_data_df['# ISA Proficiency Total Student']
 
-isa_condensed_isa_children_with_disabilities_data_df.\
+isa_condensed_children_with_disabilities_data_df.\
 to_excel('isa_condensed_children_with_disabilities_data.xlsx',index=False)
 
 # isa white students pivot table
