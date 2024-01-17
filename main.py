@@ -2680,8 +2680,10 @@ def highlight_status_value(x):
             color = 'green'
         elif x == 'Moderate': # if status = moderate
             color = 'yellow'
-        else:
+        elif x == 'Alarming': # if status = alarming
             color = 'Red' # if status = fail
+        else:
+            color = None
         return 'background-color: {}'.format(color)
     except:
         return 'Could not format Status cell background color.'
