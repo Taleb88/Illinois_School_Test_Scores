@@ -2687,13 +2687,13 @@ def highlight_status_value(x):
         return 'background-color: {}'.format(color)
     except:
         return 'Could not format Status cell background color.'
-
-science_proficiency_middle_schools_large_district_size_only_df = \
-    science_proficiency_middle_schools_large_district_size_only_df.\
-        style.applymap(highlight_status_value)
-
-science_proficiency_middle_schools_large_district_size_only_df.\
-    to_excel('science_proficiency_middle_schools_large_district_size_only.xlsx',
+# science proficiency charter schools large district size only
+science_proficiency_charter_schools_large_district_size_only_df['Status'] = \
+    science_proficiency_charter_schools_large_district_size_only_df.\
+        apply(lambda x: highlight_status_value(x))
+# science proficiency charter schools large district size only
+science_proficiency_charter_schools_large_district_size_only_df.\
+    to_excel('science_proficiency_charter_schools_large_district_size_only.xlsx',
              index=False)
 
 # ela only total student per school type pivot table
