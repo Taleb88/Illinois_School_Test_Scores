@@ -2677,11 +2677,11 @@ science_proficiency_preschools_only_df.\
 def highlight_status_value(x):
     try:
         if x == 'Up to Standard': # if status = up to standard
-            color = 'green'
+            color = '#81DF81'
         elif x == 'Moderate': # if status = moderate
-            color = 'yellow'
+            color = '#FFFF33'
         elif x == 'Alarming': # if status = alarming
-            color = 'Red' # if status = fail
+            color = '#FF6666' # if status = fail
         else:
             color = None
         return 'background-color: {}'.format(color)
