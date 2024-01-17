@@ -2673,6 +2673,27 @@ science_proficiency_preschools_only_df['Status'] =\
 science_proficiency_preschools_only_df.\
     to_excel('science_proficiency_preschools_only.xlsx', index=False)
 
+# highlight status value different color
+def highlight_status_value(x):
+    try:
+        if x == 'Up to Standard': # if status = up to standard
+            color = 'green'
+        elif x == 'Moderate': # if status = moderate
+            color = 'yellow'
+        else:
+            color = 'Red' # if status = fail
+        return 'background-color: {}'.format(color)
+    except:
+        return 'Could not format Status cell background color.'
+
+science_proficiency_middle_schools_large_district_size_only_df = \
+    science_proficiency_middle_schools_large_district_size_only_df.\
+        style.applymap(highlight_status_value)
+
+science_proficiency_middle_schools_large_district_size_only_df.\
+    to_excel('science_proficiency_middle_schools_large_district_size_only.xlsx',
+             index=False)
+
 # ela only total student per school type pivot table
 ela_only_total_student_per_school_type_pivot_table_df = pd.pivot_table(
     ela_only_df,
