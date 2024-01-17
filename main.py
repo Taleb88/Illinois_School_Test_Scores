@@ -2688,9 +2688,9 @@ def highlight_status_value(x):
     except:
         return 'Could not format Status cell background color.'
 # science proficiency charter schools large district size only
-science_proficiency_charter_schools_large_district_size_only_df['Status'] = \
+science_proficiency_charter_schools_large_district_size_only_df = \
     science_proficiency_charter_schools_large_district_size_only_df.\
-        apply(lambda x: highlight_status_value(x))
+        style.applymap(highlight_status_value) # note -> style.applymap is deprecated
 # science proficiency charter schools large district size only
 science_proficiency_charter_schools_large_district_size_only_df.\
     to_excel('science_proficiency_charter_schools_large_district_size_only.xlsx',
