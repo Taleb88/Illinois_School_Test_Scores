@@ -22,7 +22,7 @@ teacher_out_to_field_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='T
 discipline_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='Discipline')
 
 # create condensed version of general condensed data sheet
-general_condensed_df = pd.Dataframe()
+general_condensed_df = pd.DataFrame()
 rcdts = general_df.iloc[:,0]
 general_condensed_df['RCDTS'] = rcdts.copy()
 school_name = general_df.iloc[:,2]
