@@ -21,7 +21,28 @@ cte_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='CTE')
 teacher_out_to_field_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='TeacherOutofField')
 discipline_df = pd.read_excel('23-RC-Pub-Data-Set.xlsx', sheet_name='Discipline')
 
-print(general_df)
+# create condensed version of general condensed data sheet
+general_condensed_df = pd.Dataframe()
+rcdts = general_df.iloc[:,0]
+general_condensed_df['RCDTS'] = rcdts.copy()
+school_name = general_df.iloc[:,2]
+general_condensed_df['School Name'] = school_name.copy() # school name
+city = general_df.iloc[:,4]
+general_condensed_df['City'] = city.copy() # city
+school_type = general_df.iloc[:,8]
+general_condensed_df['School Type'] = school_type.copy() # school type
+
+# delete empty rows
+def delete_row(df): # find all the non-missing values ONLY
+    try:
+        return df[df['School Name'].notna()]
+    except Exception as e:
+        print(f'caught {type(e)}: e \n '
+              f'Cannot delete rows with missing school names')
+
+general_condensed_df = delete_row(general_condensed_df)
+
+general_condensed_df.to_excel('general_condensed.xlsx', index=False)
 
 # create condensed version of discipline data sheet
 discipline_condensed_df = pd.DataFrame()
@@ -36,14 +57,6 @@ discipline_condensed_df['School Type'] = school_type.copy() # school type
 number_of_discipline_incidents = discipline_df.iloc[:,11]
 discipline_condensed_df['# of Discipline Incidents'] = \
     number_of_discipline_incidents.copy() # school type
-
-# delete empty rows
-def delete_row(df): # find all the non-missing values ONLY
-    try:
-        return df[df['School Name'].notna()]
-    except Exception as e:
-        print(f'caught {type(e)}: e \n '
-              f'Cannot delete rows with missing school names')
 
 # delete rows with empty cell under School Name
 finance_condensed_df = delete_row(discipline_condensed_df)
